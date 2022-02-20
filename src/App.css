@@ -17,6 +17,18 @@ body {
     margin: 0 20%;
 }
 
+@media screen and (max-width: 1200px) {
+    .safearea {
+        margin: 0 10%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .safearea {
+        margin: 0 5%;
+    }
+}
+
 h1,
 h2,
 h3,
