@@ -15,16 +15,18 @@ export default function Header() {
     }
 
     return (
-        <header className="safearea">
-            <Hamburger onToggle={onToggle} currentState={getCurrentState} />
-            <div className="logo">
-                <img src={logo} alt="" />
-                <h1>AMANU</h1>
+        <header className="noselect">
+            <div className="safearea">
+                <Hamburger onToggle={onToggle} currentState={getCurrentState} />
+                <div className="logo">
+                    <img src={logo} alt="" />
+                    <h1>AMANU</h1>
+                </div>
+                <a href="">
+                    <h6>CONTACT</h6>
+                </a>
+                {menuOpen && <div className="menu"></div>}
             </div>
-            <a href="">
-                <h6>CONTACT</h6>
-            </a>
-            {menuOpen && <div className="menu"></div>}
         </header>
     );
 }

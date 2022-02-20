@@ -24,4 +24,24 @@
             height: 80%;
         }
     }
+
+    @media screen and (max-width: 1200px) {
+        .swiper {
+            height: 80px;
+        }
+        
+        .swiper-slide {
+            font-size: 3.5rem;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .swiper {
+            height: 50px;
+        }
+
+        .swiper-slide {
+            font-size: 2.2rem;
+        }
+    }
 }

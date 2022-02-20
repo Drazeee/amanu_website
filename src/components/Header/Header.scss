@@ -1,9 +1,20 @@
+body {
+    padding-top: 170px;
+}
+
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     height: 170px;
+    z-index: 99;
+    background-color: #000;
     padding: 2.5rem 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
     a {
         text-decoration: none;
         height: fit-content;
@@ -26,9 +37,12 @@ header {
     }
 
     .logo {
+        position: absolute;
         display: flex;
         flex-direction: column;
         align-items: center;
+        left: 50%;
+        transform: translateX(-50%);
 
         img {
             height: auto;
@@ -140,6 +154,36 @@ header {
         }
     }
 
+    @media screen and (max-width: 800px) {
+        .logo {
+            img {
+                width: 60px;
+            }
+        }
+        .hamburger {
+            height: 49px;
+            width: 45px;
+
+            span {
+                height: 4px;
+            }
+        }
+
+        a {
+            h6 {
+                font-size: 1rem;
+            }
+
+            &:after {
+                height: .4rem;
+                transform: translateY(-0.3rem);
+            }
+        }
+
+        height: 145px;
+        padding-bottom: 1rem;
+    }
+
     @keyframes smoothOpacity {
         0% {
             opacity: 0;
@@ -158,5 +202,12 @@ header {
         height: 100vh;
         animation: 0.3s ease-out 0s 1 smoothOpacity;
         z-index: 998;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    body {
+        padding-top: 145px;
     }
 }

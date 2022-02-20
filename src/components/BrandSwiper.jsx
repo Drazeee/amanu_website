@@ -8,7 +8,7 @@ import AmanuPurple from "../AMANU_PURPLE.png";
 
 export default function BrandSwiper() {
     return (
-        <div className="safearea brand">
+        <div className="safearea brand noselect">
             <Swiper
                 spaceBetween={50}
                 slidesPerView={"auto"}

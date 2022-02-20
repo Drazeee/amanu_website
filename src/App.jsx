@@ -4,6 +4,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import favicon from "./favicon.ico";
 import Header from "./components/Header/Header";
 import BrandSwiper from "./components/BrandSwiper";
+import Head from "./components/Head";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 </Helmet>
                 <Header />
                 <BrandSwiper />
+                <Head />
             </div>
         </HelmetProvider>
     );
