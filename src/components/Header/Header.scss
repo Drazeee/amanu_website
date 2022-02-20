@@ -1,0 +1,101 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 170px;
+    padding: 2.5rem 0;
+    a {
+        text-decoration: none;
+        height: fit-content;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 40%;
+            height: .5rem;
+            transform: translateY(-.5rem);
+            position: relative;
+            z-index: -1;
+            background: #B08FFF;
+            transition: width 0.3s ease;
+        }
+
+        &:hover:after {
+            width: 90%;
+        }
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+
+        h1 {
+            font-size: 0.7rem;
+            margin-top: .4rem;
+        }
+    }
+
+    h6 {
+        font-weight: 300;
+    }
+
+
+    .hamburger {
+        background: transparent;
+        border: none;
+        outline: inherit;
+        cursor: pointer;
+        position: relative;
+        height: 64.5px;
+        width: 60px;
+        background-color: #B08FFF;
+        clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            background: #000;
+            top: 3px;
+            left: 3px;
+            width: calc(100% - 6px);
+            height: calc(100% - 6px);
+            clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+            z-index: 0;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            width: 60%;
+            height: 5px;
+            background: #fff;
+            transition: all 0.3s ease;
+            z-index: 1;
+
+            &:nth-child(1) {
+                top: 30%;
+                border-top-left-radius: 15px;
+            }
+
+            &:nth-child(2) {
+                top: 62.5%;
+                border-bottom-right-radius: 15px;
+            }
+        }
+
+        &:hover span {
+            background: #B08FFF;
+        }
+    }
+}
