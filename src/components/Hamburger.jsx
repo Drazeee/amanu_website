@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Hamburger({onToggle, currentState}) {
+export default function Hamburger({ onToggle, currentState }) {
     const [isOpen, setIsOpen] = React.useState(false);
 
     function toggle() {
@@ -12,11 +12,16 @@ export default function Hamburger({onToggle, currentState}) {
         currentState(isOpen);
     }, []);
 
-    return <div>
-        <button onClick={() => toggle()} className={isOpen ? "hamburger open" : "hamburger close"}>
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>;
+    return (
+        <div>
+            <button
+                onClick={() => toggle()}
+                className={isOpen ? "hamburger open" : "hamburger close"}
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    );
 }

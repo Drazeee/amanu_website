@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, FreeMode } from "swiper"
+import { Autoplay, FreeMode } from "swiper";
 import "../scss/BrandSwiper.scss";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -22,11 +22,17 @@ export default function BrandSwiper() {
                 freeMode={true}
             >
                 <SwiperSlide>AMANU</SwiperSlide>
-                <SwiperSlide><img src={AmanuPurple} alt="" /></SwiperSlide>
+                <SwiperSlide>
+                    <img src={AmanuPurple} alt="" />
+                </SwiperSlide>
                 <SwiperSlide>AMANU</SwiperSlide>
-                <SwiperSlide><img src={AmanuPurple} alt="" /></SwiperSlide>
+                <SwiperSlide>
+                    <img src={AmanuPurple} alt="" />
+                </SwiperSlide>
                 <SwiperSlide>AMANU</SwiperSlide>
-                <SwiperSlide><img src={AmanuPurple} alt="" /></SwiperSlide>
+                <SwiperSlide>
+                    <img src={AmanuPurple} alt="" />
+                </SwiperSlide>
             </Swiper>
         </div>
     );

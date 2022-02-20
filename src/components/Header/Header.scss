@@ -12,11 +12,11 @@ header {
             content: "";
             display: block;
             width: 40%;
-            height: .5rem;
-            transform: translateY(-.5rem);
+            height: 0.5rem;
+            transform: translateY(-0.5rem);
             position: relative;
             z-index: -1;
-            background: #B08FFF;
+            background: #b08fff;
             transition: width 0.3s ease;
         }
 
@@ -37,14 +37,13 @@ header {
 
         h1 {
             font-size: 0.7rem;
-            margin-top: .4rem;
+            margin-top: 0.4rem;
         }
     }
 
     h6 {
         font-weight: 300;
     }
-
 
     .hamburger {
         background: transparent;
@@ -54,8 +53,19 @@ header {
         position: relative;
         height: 64.5px;
         width: 60px;
-        background-color: #B08FFF;
-        clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+        background-color: #b08fff;
+        clip-path: polygon(
+            50% 0%,
+            80% 10%,
+            100% 35%,
+            100% 70%,
+            80% 90%,
+            50% 100%,
+            20% 90%,
+            0% 70%,
+            0% 35%,
+            20% 10%
+        );
         z-index: 999;
         display: flex;
         justify-content: center;
@@ -70,7 +80,18 @@ header {
             left: 3px;
             width: calc(100% - 6px);
             height: calc(100% - 6px);
-            clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+            clip-path: polygon(
+                50% 0%,
+                80% 10%,
+                100% 35%,
+                100% 70%,
+                80% 90%,
+                50% 100%,
+                20% 90%,
+                0% 70%,
+                0% 35%,
+                20% 10%
+            );
             z-index: 0;
         }
 
@@ -95,7 +116,7 @@ header {
         }
 
         &:hover span {
-            background: #B08FFF;
+            background: #b08fff;
         }
 
         &.open {
@@ -135,7 +156,7 @@ header {
         left: 0;
         width: 100vw;
         height: 100vh;
-        animation: .3s ease-out 0s 1 smoothOpacity;
+        animation: 0.3s ease-out 0s 1 smoothOpacity;
         z-index: 998;
     }
 }
