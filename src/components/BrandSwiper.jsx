@@ -7,33 +7,33 @@ import "swiper/css/free-mode";
 import AmanuPurple from "../images/AMANU_PURPLE.png";
 
 export default function BrandSwiper() {
-    return (
-        <div className="safearea brand noselect">
-            <Swiper
-                spaceBetween={50}
-                slidesPerView={"auto"}
-                loop={true}
-                autoplay={{
-                    delay: 1,
-                    disableOnInteraction: false,
-                }}
-                speed={10000}
-                modules={[Autoplay, FreeMode]}
-                freeMode={true}
-            >
-                <SwiperSlide>AMANU</SwiperSlide>
-                <SwiperSlide>
-                    <img src={AmanuPurple} alt="" />
-                </SwiperSlide>
-                <SwiperSlide>AMANU</SwiperSlide>
-                <SwiperSlide>
-                    <img src={AmanuPurple} alt="" />
-                </SwiperSlide>
-                <SwiperSlide>AMANU</SwiperSlide>
-                <SwiperSlide>
-                    <img src={AmanuPurple} alt="" />
-                </SwiperSlide>
-            </Swiper>
-        </div>
-    );
+  return (
+    <div className="safearea brand noselect">
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={"auto"}
+        loop={true}
+        autoplay={{
+          delay: 1,
+          disableOnInteraction: false,
+        }}
+        speed={10000}
+        modules={[Autoplay, FreeMode]}
+        freeMode={true}
+      >
+        <SwiperSlide>AMANU</SwiperSlide>
+        <SwiperSlide>
+          <img src={AmanuPurple} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>AMANU</SwiperSlide>
+        <SwiperSlide>
+          <img src={AmanuPurple} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>AMANU</SwiperSlide>
+        <SwiperSlide>
+          <img src={AmanuPurple} alt="" />
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  );
 }

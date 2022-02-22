@@ -5,16 +5,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
-    return (
-        <BrowserRouter>
-            <AnimatePresence exitBeforeEnter>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/contact" element={<Contact />} />
-                </Routes>
-            </AnimatePresence>
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      <AnimatePresence exitBeforeEnter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </AnimatePresence>
+    </BrowserRouter>
+  );
 }
 
 export default App;
