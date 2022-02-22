@@ -6,11 +6,11 @@ import Head from "../components/Head";
 import StickySection from "../components/StickySection";
 import CryptoArt from "../images/cryptocurrency-art.png";
 import EthCoin from "../images/ethereum-coin.png";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import Separator from "../components/Separator";
 
 export default function Home() {
-    const transition = {duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96]};
+    const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
     return (
         <motion.div exit={{ opacity: 0 }} transition={transition}>
             <HelmetProvider>

@@ -176,7 +176,7 @@ header {
             }
 
             &:after {
-                height: .4rem;
+                height: 0.4rem;
                 transform: translateY(-0.3rem);
             }
         }
@@ -205,7 +205,6 @@ header {
         z-index: 998;
     }
 }
-
 
 @media screen and (max-width: 800px) {
     body {

@@ -5,15 +5,15 @@
     justify-content: center;
 
     .dot {
-        height: .4rem;
-        width: .4rem;
+        height: 0.4rem;
+        width: 0.4rem;
         border-radius: 50%;
-        margin: 0 .2rem;
+        margin: 0 0.2rem;
     }
 
     .line {
         width: 90%;
-        height: .2rem;
+        height: 0.2rem;
 
         &.small {
             width: 10%;
