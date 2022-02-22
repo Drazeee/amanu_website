@@ -1,0 +1,42 @@
+.sticky-section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+
+    &.right {
+        flex-direction: row-reverse;
+    }
+
+    @media screen and (min-width: 1200px) {
+        &.right {
+            margin: 0;
+        }
+    }
+
+    .sticky {
+        position: sticky;
+        top: 150px;
+        z-index: 1;
+        height: max-content;
+        width: 25%;
+    }
+
+    .content {
+        background-color: #fff;
+        height: 1600px;
+        width: 75%;
+    }
+
+    @media screen and (max-width: 1200px) {
+        width: unset;
+
+        .sticky {
+            display: none;
+        }
+
+        .content {
+            width: 100%;
+        }
+    }
+}

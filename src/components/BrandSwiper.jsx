@@ -4,7 +4,7 @@ import { Autoplay, FreeMode } from "swiper";
 import "../scss/BrandSwiper.scss";
 import "swiper/css";
 import "swiper/css/free-mode";
-import AmanuPurple from "../AMANU_PURPLE.png";
+import AmanuPurple from "../images/AMANU_PURPLE.png";
 
 export default function BrandSwiper() {
     return (

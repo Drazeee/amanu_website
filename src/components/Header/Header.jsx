@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../logo.svg";
 import Hamburger from "../Hamburger";
 import "./Header.scss";
+import { Link } from "react-router-dom";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = React.useState(false);
@@ -14,17 +15,29 @@ export default function Header() {
         setMenuOpen(state);
     }
 
+    const [offset, setOffset] = React.useState(0);
+
+    React.useEffect(() => {
+        const onScroll = () => setOffset(window.pageYOffset);
+        // clean up code
+        window.removeEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
     return (
-        <header className="noselect">
+        <header className={"noselect" + (offset > 30 ? " offset" : null)}>
             <div className="safearea">
                 <Hamburger onToggle={onToggle} currentState={getCurrentState} />
                 <div className="logo">
-                    <img src={logo} alt="" />
-                    <h1>AMANU</h1>
+                    <Link to="/">
+                        <img src={logo} alt="Amanu logo" />
+                        <h1>AMANU</h1>
+                    </Link>
                 </div>
-                <a href="">
+                <Link to="/contact" className="nav">
                     <h6>CONTACT</h6>
-                </a>
+                </Link>
                 {menuOpen && <div className="menu"></div>}
             </div>
         </header>

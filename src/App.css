@@ -11,6 +11,7 @@
 
 body {
     background: #000;
+    min-height: 400vh;
 }
 
 .safearea {

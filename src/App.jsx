@@ -1,24 +1,16 @@
-import { useState } from "react";
 import "./App.css";
-import { Helmet, HelmetProvider } from "react-helmet-async";
-import favicon from "./favicon.ico";
-import Header from "./components/Header/Header";
-import BrandSwiper from "./components/BrandSwiper";
-import Head from "./components/Head";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
     return (
-        <HelmetProvider>
-            <div>
-                <Helmet prioritizeSeoTags>
-                    <title>Amanu</title>
-                    <link rel="icon" type="image/x-icon" href={favicon}></link>
-                </Helmet>
-                <Header />
-                <BrandSwiper />
-                <Head />
-            </div>
-        </HelmetProvider>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
