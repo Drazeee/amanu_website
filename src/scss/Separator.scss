@@ -1,0 +1,22 @@
+.separator-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .dot {
+        height: .4rem;
+        width: .4rem;
+        border-radius: 50%;
+        margin: 0 .2rem;
+    }
+
+    .line {
+        width: 90%;
+        height: .2rem;
+
+        &.small {
+            width: 10%;
+        }
+    }
+}

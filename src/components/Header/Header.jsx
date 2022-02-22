@@ -3,6 +3,7 @@ import logo from "../../logo.svg";
 import Hamburger from "../Hamburger";
 import "./Header.scss";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion"
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = React.useState(false);
@@ -31,7 +32,7 @@ export default function Header() {
                 <Hamburger onToggle={onToggle} currentState={getCurrentState} />
                 <div className="logo">
                     <Link to="/">
-                        <img src={logo} alt="Amanu logo" />
+                        <motion.img whileHover={{scale: 1.1}} src={logo} alt="Amanu logo" />
                         <h1>AMANU</h1>
                     </Link>
                 </div>
