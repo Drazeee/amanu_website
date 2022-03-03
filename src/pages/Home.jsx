@@ -32,10 +32,6 @@ export default function Home() {
           <Header />
           <BrandSwiper />
           <Head />
-          {/* <Separator height="15vh" type="dots" />
-                    <Separator height="15vh" type="line" />
-                    <Separator height="15vh" type="small_line" color="#0f0" />
-                    <Separator height="15vh" /> */}
           <Separator height="15vh" />
           <StickySection
             side="right"
