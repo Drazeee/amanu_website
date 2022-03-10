@@ -1,0 +1,37 @@
+.partners {
+    background-color: #222229;
+    height: 22vh;
+    min-height: 200px;
+    width: 100%;
+
+    .swiper-slide {
+        width: fit-content;
+    }
+
+    > div {
+        width: 70%;
+        margin: auto;
+    }
+
+    @media screen and (max-width: 1200px) {
+        > div {
+            width: 90%;
+        }
+    }
+}
+
+.partners .partner-slide {
+    height: 22vh;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
+.partners .partner-slide img {
+    width: 8vw;
+    max-height: 5vh;
+    min-height: 80px;
+    min-width: 100px;
+}

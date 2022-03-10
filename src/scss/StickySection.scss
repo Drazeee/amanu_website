@@ -14,7 +14,7 @@
         top: 0;
         right: 0;
         width: 25%;
-        height: 50vh;
+        height: 500px;
         z-index: 2;
         background: rgb(0, 0, 0);
         background: linear-gradient(
@@ -24,11 +24,27 @@
         );
     }
 
+    &.ease:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 25%;
+        height: 1000px;
+        z-index: 2;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 1) 50%,
+            rgba(0, 0, 0, 0) 100%
+        );
+    }
+
     @media screen and (min-width: 1200px) {
         &.right {
             margin: 0;
 
-            &:before {
+            &:before, &:after {
                 left: 0;
             }
         }
@@ -43,15 +59,15 @@
     }
 
     .content {
-        background-color: #fff;
         height: 1600px;
         width: 75%;
+        position: relative;
     }
 
     @media screen and (max-width: 1200px) {
         width: unset;
 
-        &.ease:before {
+        &.ease:before, &.ease:after {
             display: none;
         }
 

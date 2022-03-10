@@ -27,8 +27,8 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={"noselect" + (offset > 30 ? " offset" : null)}>
-      <div className="safearea">
+    <header className={"noselect" + (offset > 30 ? " offset" : "")}>
+      <div>
         <Hamburger onToggle={onToggle} currentState={getCurrentState} />
         <div className="logo">
           <Link to="/">

@@ -1,6 +1,5 @@
 .brand {
     padding: 6vh 0;
-    margin: 0 15%;
     position: relative;
 
     &:before,
@@ -9,7 +8,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 8vw;
+        width: 15vw;
         height: 100%;
         background: rgb(0, 0, 0);
         background: linear-gradient(

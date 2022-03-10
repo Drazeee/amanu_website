@@ -1,0 +1,45 @@
+div.content {
+    position: relative;
+
+    .title {
+        font-size: 2.4rem;
+        text-align: center;
+        font-weight: 600;
+        letter-spacing: -.5px;
+    }
+    
+    .purple {
+        color: #B08FFF;
+    }
+    
+    div.line {
+        width: 15px;
+        background-color: #fff;
+        height: 1100px;
+        transform: translateY(-25px);
+        z-index: -1;
+    }
+
+    div.arrow {
+        position: sticky;
+        top: 200px;
+        background-color: #B08FFF;
+        width: 25px;
+        height: 25px;
+        clip-path: circle(75%);
+        transition: clip-path .5s;
+
+        &.circle {
+            clip-path: circle(50%);
+        }
+    }
+    
+    div.background {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
