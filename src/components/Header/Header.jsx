@@ -3,7 +3,6 @@ import logo from "../../logo.svg";
 import Hamburger from "../Hamburger";
 import "./Header.scss";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = React.useState(false);
