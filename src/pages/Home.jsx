@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from "../components/Header/Header";
 import BrandSwiper from "../components/BrandSwiper";
-import Head from "../components/Head";
 import { motion } from "framer-motion";
 import Separator from "../components/Separator";
 import Section from "../components/Section";

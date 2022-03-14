@@ -9,9 +9,9 @@ export default function Footer() {
             <div className="safearea">
                 <p>Copyright© Amanu {new Date().getFullYear()}</p>
                 <div className="socials">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-brands fa-instagram"></i>
+                    <i className="fa-brands fa-linkedin-in"></i>
+                    <i className="fa-brands fa-twitter"></i>
+                    <i className="fa-brands fa-instagram"></i>
                 </div>
             </div>
         </footer>
