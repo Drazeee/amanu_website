@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import Separator from "../components/Separator";
 import Section from "../components/Section";
 import Footer from "../components/Footer";
+import Process from "../components/Process";
+import Contact from "../components/Contact";
 
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
@@ -38,6 +40,8 @@ export default function Home() {
                                 name="description"
                                 content="Sell your physical art, earn royalties at the resell. Reach a new audience ! Welcome to the metaverse."
                             />
+                            <meta name="msapplication-TileColor" content="#d8a41e"></meta>
+                            <meta name="theme-color" content="#d8a41e"></meta>
                         </Helmet>
 
                         {/* Main components */}
@@ -98,6 +102,7 @@ export default function Home() {
                                     </p>
                                 </div>
                             }
+                            invert={true}
                         ></Section>
                         <Separator height="10vh" />
                         <Section
@@ -143,7 +148,13 @@ export default function Home() {
                                     </p>
                                 </div>
                             }
+                            invert={true}
                         />
+                        <Separator height="20vh" />
+                        <Process />
+                        <Separator height="30vh" />
+                        <Contact />
+                        <Separator height="25vh" />
                         <Footer />
                     </div>
                 </HelmetProvider>

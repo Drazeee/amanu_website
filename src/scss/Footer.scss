@@ -27,4 +27,8 @@ footer {
         display: flex;
         gap: 20px;
     }
+
+    @media screen and (max-width: 750px) {
+        height: 80px;
+    }
 }

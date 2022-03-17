@@ -89,6 +89,10 @@
         }
 
         flex-direction: column;
+
+        &.invert {
+            flex-direction: column-reverse;
+        }
         gap: 10vw;
     }
 }
