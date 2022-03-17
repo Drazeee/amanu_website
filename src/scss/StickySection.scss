@@ -44,7 +44,8 @@
         &.right {
             margin: 0;
 
-            &:before, &:after {
+            &:before,
+            &:after {
                 left: 0;
             }
         }
@@ -67,7 +68,8 @@
     @media screen and (max-width: 1200px) {
         width: unset;
 
-        &.ease:before, &.ease:after {
+        &.ease:before,
+        &.ease:after {
             display: none;
         }
 

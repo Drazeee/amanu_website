@@ -35,7 +35,7 @@ header {
             transform: translateY(-0.5rem);
             position: relative;
             z-index: -1;
-            background: #D8A41E;
+            background: #d8a41e;
             transition: width 0.3s ease;
         }
 
@@ -118,7 +118,7 @@ header {
         }
 
         &:hover span {
-            background: #D8A41E;
+            background: #d8a41e;
         }
 
         &.open {

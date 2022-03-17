@@ -6,9 +6,11 @@
     }
 
     > div:last-of-type {
-        display: flex;
-        gap: 1rem;
-        flex-direction: column;
+        form {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+        }
 
         input,
         select {
@@ -74,8 +76,7 @@
         }
     }
 
-    @media screen and (max-width: 1200px)
-    {
+    @media screen and (max-width: 1200px) {
         flex-direction: column;
 
         > div {
@@ -84,7 +85,9 @@
 
         > div:last-of-type {
             align-items: center;
-            input, select, textarea {
+            input,
+            select,
+            textarea {
                 width: 600px;
                 max-width: 100%;
             }

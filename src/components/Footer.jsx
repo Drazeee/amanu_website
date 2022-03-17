@@ -1,7 +1,7 @@
 import React from "react";
 import "../scss/Footer.scss";
 
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function Footer() {
     return (
@@ -9,7 +9,10 @@ export default function Footer() {
             <div className="safearea">
                 <p>Copyright© Amanu {new Date().getFullYear()}</p>
                 <div className="socials">
-                    <a href="https://www.linkedin.com/company/amanu-io/" target="_blank">
+                    <a
+                        href="https://www.linkedin.com/company/amanu-io/"
+                        target="_blank"
+                    >
                         <i className="fa-brands fa-linkedin-in"></i>
                     </a>
                     <a href="https://twitter.com/Amanu_nft" target="_blank">

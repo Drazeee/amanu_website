@@ -40,7 +40,10 @@ export default function Home() {
                                 name="description"
                                 content="Sell your physical art, earn royalties at the resell. Reach a new audience ! Welcome to the metaverse."
                             />
-                            <meta name="msapplication-TileColor" content="#d8a41e"></meta>
+                            <meta
+                                name="msapplication-TileColor"
+                                content="#d8a41e"
+                            ></meta>
                             <meta name="theme-color" content="#d8a41e"></meta>
                         </Helmet>
 
@@ -70,7 +73,11 @@ export default function Home() {
                                     <span className="underline">METAVERSE</span>
                                 </h1>
                             }
-                            right={<Parallax speed={-10}><img src={NftFrameArt}></img></Parallax>}
+                            right={
+                                <Parallax speed={-10}>
+                                    <img src={NftFrameArt}></img>
+                                </Parallax>
+                            }
                         />
                         <Separator height="10vh" />
                         <BrandSwiper />
@@ -87,9 +94,7 @@ export default function Home() {
                                         Your art,
                                         <br />
                                         Our{" "}
-                                        <div className="color">
-                                            technology
-                                        </div>
+                                        <div className="color">technology</div>
                                     </h2>
                                     <p>
                                         Lorem Ipsum is simply dummy text of the
@@ -124,18 +129,25 @@ export default function Home() {
                                     </p>
                                 </div>
                             }
-                            right={<Parallax speed={20}><img src={NftCertificate}></img></Parallax>}
+                            right={
+                                <Parallax speed={20}>
+                                    <img src={NftCertificate}></img>
+                                </Parallax>
+                            }
                         />
                         <Separator height="10vh" />
                         <Section
-                            left={<Parallax speed={20}><img src={Mint}></img></Parallax>}
+                            left={
+                                <Parallax speed={20}>
+                                    <img src={Mint}></img>
+                                </Parallax>
+                            }
                             right={
                                 <div className="subtitle">
                                     <h2 className="title">
                                         FROM PHYSIcal
                                         <br />
-                                        TO{" "}
-                                        <div className="color">DIGITAL</div>
+                                        TO <div className="color">DIGITAL</div>
                                     </h2>
                                     <p>
                                         Lorem Ipsum is simply dummy text of the

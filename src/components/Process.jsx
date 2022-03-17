@@ -1,8 +1,8 @@
 import React from "react";
-import Search from "../images/nft-search.png"
-import File from "../images/nft-file.png"
-import Blockchain from "../images/blockchain.png"
-import Bid from "../images/bid.png"
+import Search from "../images/nft-search.png";
+import File from "../images/nft-file.png";
+import Blockchain from "../images/blockchain.png";
+import Bid from "../images/bid.png";
 
 import "../scss/Process.scss";
 
