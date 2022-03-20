@@ -4,7 +4,7 @@ import "../scss/Contact.scss";
 
 export default function Contact() {
     return (
-        <div className="contact safearea">
+        <div className="contact safearea" id="contact">
             <div>
                 <div>
                     <h1 className="title">Contact</h1>
@@ -21,9 +21,10 @@ export default function Contact() {
                         placeholder="Email address..."
                     />
                     <select name="" id="">
-                        <option value="">Select a status</option>
+                        <option value="">Select a status...</option>
                         <option value="">Artist</option>
                         <option value="">Investor</option>
+                        <option value="">Other</option>
                     </select>
                     <textarea
                         name=""

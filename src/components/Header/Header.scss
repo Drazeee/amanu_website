@@ -101,13 +101,13 @@ header {
             display: block;
             position: absolute;
             width: 60%;
-            height: 4px;
+            height: 5px;
             background: #fff;
             transition: all 0.3s ease;
             z-index: 1;
 
             &:nth-child(1) {
-                top: 30%;
+                top: 28%;
                 border-top-left-radius: 15px;
             }
 

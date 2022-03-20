@@ -35,9 +35,9 @@ export default function Header() {
                         <h1>AMANU</h1>
                     </Link>
                 </div>
-                <Link to="/contact" className="nav">
+                <a href="#contact" className="nav">
                     <h6>CONTACT</h6>
-                </Link>
+                </a>
                 {menuOpen && <div className="menu"></div>}
             </div>
         </header>
