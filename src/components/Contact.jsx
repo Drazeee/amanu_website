@@ -13,27 +13,28 @@ export default function Contact() {
             </div>
             <div>
                 <form action="" method="post">
-                    <input type="text" name="" id="" placeholder="Name..." />
+                    <input type="text" name="name" id="name" placeholder="Name..." />
                     <input
                         type="email"
-                        name=""
-                        id=""
+                        name="email"
+                        id="email"
                         placeholder="Email address..."
                     />
-                    <select name="" id="">
-                        <option value="">Select a status...</option>
-                        <option value="">Artist</option>
-                        <option value="">Investor</option>
-                        <option value="">Other</option>
+                    <select name="status" id="status">
+                        <option value="none">Select a status...</option>
+                        <option value="artist">Artist</option>
+                        <option value="investor">Investor</option>
+                        <option value="other">Other</option>
                     </select>
                     <textarea
-                        name=""
-                        id=""
+                        name="message"
+                        id="message"
                         cols="30"
                         rows="10"
                         placeholder="Message..."
                         res
                     ></textarea>
+                    <button type="submit">Send</button>
                 </form>
             </div>
         </div>
