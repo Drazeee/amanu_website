@@ -12,7 +12,7 @@ export default function Contact() {
                 </div>
             </div>
             <div>
-                <form action="" method="post">
+                <form name="contact" method="post" data-netlify="true">
                     <input type="text" name="name" id="name" placeholder="Name..." />
                     <input
                         type="email"
