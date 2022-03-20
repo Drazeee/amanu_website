@@ -89,11 +89,13 @@ export default function Home() {
                     Our <div className="color">technology</div>
                   </h2>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    An initial consulting phase permits us to better understand
+                    your art, needs and personality to create the best possible
+                    project.
+                    <br />
+                    <br />
+                    We want our technology to best suit the artist's needs, thus
+                    we focus on a great communication with our clients.
                   </p>
                 </div>
               }
@@ -109,11 +111,13 @@ export default function Home() {
                     What's that ?
                   </h2>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    Non Fungible Tokens (NFTs) are new way of building secured,
+                    decentralized and traceable transactions.
+                    <br />
+                    <br />
+                    NFT provide a unique certificate attesting to the
+                    authenticity of a work, while referencing its creator and
+                    allowing royalties to be obtained.
                   </p>
                 </div>
               }
@@ -138,20 +142,21 @@ export default function Home() {
                     TO <div className="color">DIGITAL</div>
                   </h2>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    We offer artists a unique gateway to the world of tomorrow,
+                    helping them to take the first step into the future: the
+                    Metaverse.
+                    <br />
+                    <br />
+                    To this end, our service allows physical works to be made
+                    digital, in order to reach a new, younger audience, while
+                    preserving their current customers.
                   </p>
                 </div>
               }
               invert={true}
             />
             <Separator height="20vh" />
-            <div>
-              
-            </div>
+            <div></div>
             <Separator height="20vh" />
             <Process />
             <Separator height="30vh" />
