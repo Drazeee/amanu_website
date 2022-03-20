@@ -5,41 +5,48 @@ import "./Header.scss";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-    const [menuOpen, setMenuOpen] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState(false);
 
-    function onToggle(state) {
-        setMenuOpen(state);
-    }
+  function onToggle(state) {
+    setMenuOpen(state);
+  }
 
-    function getCurrentState(state) {
-        setMenuOpen(state);
-    }
+  function getCurrentState(state) {
+    setMenuOpen(state);
+  }
 
-    const [offset, setOffset] = React.useState(0);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
-    React.useEffect(() => {
-        const onScroll = () => setOffset(window.pageYOffset);
-        // clean up code
-        window.removeEventListener("scroll", onScroll);
-        window.addEventListener("scroll", onScroll, { passive: true });
-        return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+  const [offset, setOffset] = React.useState(0);
 
-    return (
-        <header className={"noselect" + (offset > 30 ? " offset" : "")}>
-            <div>
-                <Hamburger onToggle={onToggle} currentState={getCurrentState} />
-                <div className="logo">
-                    <Link to="/">
-                        <img src={logo} alt="Amanu logo" />
-                        <h1>AMANU</h1>
-                    </Link>
-                </div>
-                <a href="#contact" className="nav">
-                    <h6>CONTACT</h6>
-                </a>
-                {menuOpen && <div className="menu"></div>}
-            </div>
-        </header>
-    );
+  React.useEffect(() => {
+    const onScroll = () => setOffset(window.pageYOffset);
+    // clean up code
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <header className={"noselect" + (offset > 30 ? " offset" : "")}>
+      <div>
+        <Hamburger onToggle={onToggle} currentState={getCurrentState} />
+        <div className="logo">
+          <div onClick={scrollToTop}>
+            <img src={logo} alt="Amanu logo" />
+            <h1>AMANU</h1>
+          </div>
+        </div>
+        <a href="#contact" className="nav">
+          <h6>CONTACT</h6>
+        </a>
+        {menuOpen && <div className="menu"></div>}
+      </div>
+    </header>
+  );
 }
