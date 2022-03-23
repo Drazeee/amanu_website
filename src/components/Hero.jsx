@@ -1,4 +1,5 @@
 import React from "react";
+
 import "../scss/Hero.scss";
 
 import hero_image from "../assets/hero-image.png";
@@ -11,6 +12,10 @@ import ledger from "../assets/partners/ledger.svg";
 export default function Hero() {
   return (
     <>
+      <div className="colors">
+        <div></div>
+        <div></div>
+      </div>
       <div className="safearea hero">
         <div className="content">
           <h6>WE ARE AMANU</h6>
@@ -52,7 +57,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
-        <img src={hero_image} alt="arts" />
+        <img src={hero_image} alt="arts" className="noselect" />
       </div>
       <div className="safearea partners">
         <img src={spatial} alt="" />

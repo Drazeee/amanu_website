@@ -1,0 +1,190 @@
+.community {
+    margin-top: 200px;
+    h2 {
+        font-size: 3.5rem;
+        font-weight: 200;
+        margin-bottom: 1.5rem;
+        line-height: 3.8rem;
+
+        b {
+            font-weight: 400;
+            font-family: "Archivo", sans-serif;
+        }
+
+        img {
+            height: 3.2rem;
+            transform: translateY(5px);
+        }
+
+        width: 690px;
+        max-width: 100%;
+
+        @media (max-width: 1000px) {
+            width: 65%;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            line-height: 2.5rem;
+
+            img {
+                height: 2.5rem;
+            }
+        }
+
+        @media screen and (max-width: 650px) {
+            width: 100%; 
+        }
+    }
+
+    h4 {
+        background: linear-gradient(90deg, #49D3D5 0%, #2882A7 100%);
+        -webkit-background-clip: text;
+        width: fit-content;
+        -webkit-text-fill-color: transparent;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+
+    .fullsize {
+        height: 550px;
+        background: linear-gradient(49deg, #278BFF 0%, #4359BE 100%);
+        border-radius: 60px;
+        box-shadow: inset 0 0 60px 0 rgba(255, 255, 255, 0.5);
+        position: relative;
+        z-index: 0;
+        padding: 60px;
+
+        @media screen and (max-width: 1000px) {
+            height: 400px;
+        }
+
+        @media screen and (max-width: 800px) {
+            height: 350px;
+        }
+
+        @media screen and (max-width: 600px) {
+            padding: 30px 50px;
+        }
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        p {
+            font-size: 1.4rem;
+            font-weight: 200;
+            line-height: 2.2rem;
+            color: #fff;
+
+            &:nth-child(1) {
+                width: 40%;
+            }
+
+            &:nth-child(2) {
+                width: 46%;
+            }
+
+            &:nth-child(3) {
+                width: 80%;
+                margin-bottom: 0;
+            }
+
+            b {
+                font-weight: 400;
+                color: #fff;
+            }
+
+            a {
+                font-weight: 400;
+                color: #fff;
+            }
+
+            @media screen and (max-width: 1500px) {
+                font-size: 1.2rem;
+                line-height: 1.8rem;
+
+                &:nth-child(1) {
+                    width: 30%;
+                }
+            }
+
+            @media screen and (max-width: 1150px) {
+                font-size: 1.1rem;
+                line-height: 1.6rem;
+            }
+
+            @media screen and (max-width: 1000px) {
+                font-size: .9rem;
+                line-height: 1.3rem;
+
+                &:nth-child(1) {
+                    width: 35%;
+                }
+
+                &:nth-child(2) {
+                    width: 60%;
+                }
+
+                &:nth-child(3) {
+                    width: 100%;
+                }
+            }
+
+            @media screen and (max-width: 800px) {
+                font-size: .8rem;
+                line-height: 1.2rem;
+
+                &:nth-child(1) {
+                    width: 100%;
+                }
+
+                &:nth-child(2) {
+                    width: 100%;
+                }
+
+                &:nth-child(3) {
+                    width: 100%;
+                }
+            }
+        }
+
+        img {
+            height: 180%;
+            position: absolute;
+            right: -8%;
+            top: -80%;
+            z-index: -1;
+
+            @media screen and (max-width: 1370px) {
+                height: 160%;
+                top: -60%;
+                right: -12%;
+            }
+
+            @media screen and (max-width: 1150px) {
+                height: 140%;
+                top: -40%;
+            }
+
+            @media screen and (max-width: 1000px) {
+                height: auto;
+                width: 75%;
+                right: -10%;
+                top: -50%;
+            }
+
+            @media screen and (max-width: 850px) {
+                top: -40%;
+            }
+
+            @media screen and (max-width: 800px) {
+                display: none;
+                height: 0;
+                widht: 0;
+            }
+        }
+    }
+}
