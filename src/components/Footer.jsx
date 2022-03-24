@@ -1,13 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import "../scss/Footer.scss"
+import "../scss/Footer.scss";
 
 export default function Footer() {
   return (
-    <footer className='safearea'>
+    <footer className="safearea">
       <div className="left">
         <div>
-          <h6>Amanu helps artists to get their artworks more secure and usable in all Metaverses.</h6>
+          <h6>
+            Amanu helps artists to get their artworks more secure and usable in
+            all Metaverses.
+          </h6>
           <a href="mailto:contact@amanu.io">contact@amanu.io</a>
         </div>
         <p>© 2022 Amanu - All Rights Reserved</p>
@@ -36,5 +39,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
