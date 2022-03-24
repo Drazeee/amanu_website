@@ -1,0 +1,105 @@
+footer {
+    display: flex;
+    margin-top: 300px !important;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: max-content;
+    margin-bottom: 55px !important;
+
+    @media screen and (max-width: 900px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 0;
+        margin-top: 150px !important;
+    }
+
+    .left {
+        width: 30%;
+        display: flex;
+        align-items: space-between;
+        flex-direction: column;
+
+        @media screen and (max-width: 900px) {
+            width: 100%;
+            margin-top: 3rem;
+        }
+
+        h6 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+
+            @media screen and (max-width: 1300px) {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            max-width: 500px;
+        }
+
+        a {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            margin-top: 4rem;
+        }
+    }
+
+    .right {
+        display: flex;
+        gap: 7rem;
+
+        @media screen and (max-width: 1100px) {
+            gap: 4rem;
+        }
+
+        @media screen and (max-width: 700px) {
+            gap: 2rem;
+        }
+
+        @media screen and (max-width: 400px) {
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .items {
+            h6 {
+                color: rgb(184, 184, 184);
+                font-weight: 300;
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+
+                @media screen and (max-width: 1300px) {
+                    font-size: 1.1rem;
+                }
+
+                @media screen and (max-width: 400px) {
+                    font-size: 1.3rem;
+                }
+            }
+
+            p, a {
+                font-weight: 400;
+                margin-bottom: 1.2rem;
+                text-decoration: none;
+                display: block;
+                font-size: 1.1rem;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                @media screen and (max-width: 1300px) {
+                    font-size: .9rem;
+                }
+
+                @media screen and (max-width: 400px) {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}

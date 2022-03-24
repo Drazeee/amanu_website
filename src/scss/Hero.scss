@@ -170,6 +170,10 @@
                 @media screen and (max-width: 1200px) {
                     font-size: 1rem;
                 }
+
+                @media screen and (max-width: 400px) {
+                    font-size: .7rem;
+                }
             }
 
             button {
@@ -204,6 +208,10 @@
 
                 @media screen and (max-width: 1650px) {
                     padding: .8rem 1.2rem;
+                }
+
+                @media screen and (max-width: 400px) {
+                    padding: .5rem 1rem;
                 }
             }
         }

@@ -1,0 +1,195 @@
+.team {
+    margin-top: 200px;
+
+    h2 {
+        font-size: 2.9em;
+        font-weight: 200;
+        margin-bottom: 1.5rem;
+        line-height: 3.5rem;
+
+        b {
+            font-weight: 400;
+            font-family: "Archivo", sans-serif;
+        }
+
+        img {
+            height: 2.8rem;
+            transform: translateY(5px);
+        }
+
+        width: 790px;
+        max-width: 100%;
+
+        @media (max-width: 1000px) {
+            width: 65%;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            line-height: 2.5rem;
+
+            img {
+                height: 2.5rem;
+            }
+        }
+
+        @media screen and (max-width: 650px) {
+            width: 100%; 
+        }
+
+        @media screen and (max-width: 1400px) {
+            font-size: 2rem;
+            line-height: 2.5rem;
+
+            img {
+                height: 2rem;
+            }
+        }
+    }
+
+    h4 {
+        background: linear-gradient(90deg, #49D3D5 0%, #2882A7 100%);
+        -webkit-background-clip: text;
+        width: fit-content;
+        -webkit-text-fill-color: transparent;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 1.2rem;
+        margin-bottom: .6rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+        font-weight: 200;
+        width: 80%;
+        margin-top: 2rem;
+
+        @media screen and (max-width: 1400px) {
+            font-size: 1rem;
+        }
+    }
+
+    display: flex;
+    align-items: flex-start;
+    gap: 6rem;
+
+
+    @media screen and (max-width: 1000px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 0;
+    }
+
+    .content {
+        width: 40%;
+
+        @media screen and (max-width: 1150px) {
+            width: 45%;
+        }
+
+        @media screen and (max-width: 1000px) {
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+    }
+
+    .images {
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr; 
+        width: 45%;
+        @media screen and (max-width: 1000px) {
+            width: 100%;
+        }
+        max-width: 700px;
+        height: auto;
+        gap: 2rem 2rem;
+        grid-template-areas: 
+            "us us first"
+            "us us second"
+            "fith fourth third";
+        .fith { grid-area: fith; }
+        .fourth { grid-area: fourth; }
+        .third { grid-area: third; }
+        .second { grid-area: second; }
+        .first { grid-area: first; }
+        .us { grid-area: us; }
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+
+            @media screen and (max-width: 1300px) {
+                border-radius: 15px;
+            }
+        }
+    }
+
+    .cta {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        margin-top: 6rem;
+
+        @media screen and (max-width: 1400px) {
+            margin-top: 3rem;
+        }
+
+        > a:first-of-type {
+            text-decoration: none;
+        }
+
+        > a:last-of-type {
+            font-weight: 500;
+            font-size: 1.2rem;
+            display: flex;
+            gap: .4rem;
+
+            @media screen and (max-width: 1200px) {
+                font-size: 1rem;
+            }
+
+            @media screen and (max-width: 400px) {
+                font-size: .7rem;
+            }
+        }
+
+        button {
+            background: linear-gradient(90deg, #F083EB 0%, #D63DCE 100%);
+            border: none;
+            padding: 1rem 1.8rem;
+            border-radius: 5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .link {
+                background-color: #fff;
+                border-radius: 50%;
+                width: 1.8rem;
+                height: 1.8rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            span {
+                color: #fff;
+                font-size: 1.3rem;
+                font-weight: 200;
+
+                @media screen and (max-width: 1650px) {
+                    font-size: 1.1rem;
+                }
+            }
+
+            @media screen and (max-width: 1650px) {
+                padding: .8rem 1.2rem;
+            }
+
+            @media screen and (max-width: 400px) {
+                padding: .5rem 1rem;
+            }
+        }
+    }
+}
