@@ -5,26 +5,43 @@ import "../scss/Team.scss";
 
 import arrow_up from "../assets/arrows/arrow_up.svg";
 import arrow_right from "../assets/arrows/arrow_right.svg";
-import us from "../assets/team/1.jpg";
+import us from "../assets/team/us.png";
+import qfisch from "../assets/team/qfisch.png";
+import qfisch_meta from "../assets/team/qfisch_meta.png";
+import gminoprio from "../assets/team/gminoprio.png";
+import csimonmeunier from "../assets/team/csimonmeunier.png";
+import csimonmeunier_meta from "../assets/team/csimonmeunier_meta.jpg";
 
 export default function Team() {
   return (
     <div className="safearea team">
       <div className="images">
         <div className="fith">
-          <img src={us} alt="" />
+          <img src={csimonmeunier_meta} alt="" />
         </div>
         <div className="fourth">
-          <img src={us} alt="" />
+          <a
+            href="https://www.linkedin.com/in/charles-simon-meunier/"
+            target="_blank"
+          >
+            <img src={csimonmeunier} alt="" />
+          </a>
         </div>
         <div className="third">
-          <img src={us} alt="" />
+          <a
+            href="https://www.linkedin.com/in/gianluca-minoprio/"
+            target="_blank"
+          >
+            <img src={gminoprio} alt="" />
+          </a>
         </div>
         <div className="second">
-          <img src={us} alt="" />
+          <a href="https://www.linkedin.com/in/quentin-fisch/" target="_blank">
+            <img src={qfisch} alt="" />
+          </a>
         </div>
         <div className="first">
-          <img src={us} alt="" />
+          <img src={qfisch_meta} alt="" />
         </div>
         <div className="us">
           <img src={us} alt="" />

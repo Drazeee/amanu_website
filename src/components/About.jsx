@@ -5,10 +5,43 @@ import "../scss/About.scss";
 
 import stars from "../assets/about/stars.svg";
 import pots from "../assets/about/pots.png";
+import eth from "../assets/about/eth.svg";
 
 export default function About() {
+  const button = React.useRef(null);
+  const top = React.useRef(null);
+
+  const [step, setStep] = React.useState(0);
+
+  function addStep() {
+    setStep(step + 1);
+    switch (step)
+    {
+      case 0:
+        firstStep();
+        break;
+      case 1:
+        secondStep();
+        break;
+    }
+  }
+
+  function firstStep() {
+    button.current.classList.add('second');
+    button.current.children[0].innerHTML = "Claim Now"
+    top.current.classList.add('second');
+  }
+
+  function secondStep() {
+    button.current.classList.add('third');
+    button.current.children[0].innerHTML = "Resell"
+    top.current.classList.add('third');
+    button.current.classList.remove('second');
+    top.current.classList.remove('second');
+  }
+
   return (
-    <div className="safearea about">
+    <div className="safearea about" id="about">
       <section>
         <img src="" alt="" />
         <div className="content">
@@ -68,8 +101,36 @@ export default function About() {
             order the work associated with it.
           </p>
         </div>
-        <div className="sticky">
-          <img src={pots} alt="" />
+        <div className="sticky" id="about-scroll">
+          <img src={pots} alt="" className="pots noselect" />
+          <div className="unclaimed_nft">
+            <div className="top" ref={top}></div>
+            <div className="infos">
+              <h5>My pots #1</h5>
+              <div>
+                <div className="numbers">
+                  <div>
+                    <h6>Price</h6>
+                    <div>
+                      <img src={eth} alt="" />
+                      <p>0.34 ETH</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h6>Owner</h6>
+                    <div>
+                      <p>
+                        Amanu <small>(0x735...eb2)</small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <button className="noselect" ref={button} onClick={() => addStep()}>
+                  <p>Order Now</p>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
