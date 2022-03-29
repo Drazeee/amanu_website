@@ -4,6 +4,8 @@ import discord from "../assets/socials/discord.svg";
 import instagram from "../assets/socials/instagram.svg";
 import { Link } from "react-scroll";
 
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import "../scss/Header.scss";
 
 export default function Header() {
@@ -63,14 +65,14 @@ export default function Header() {
         </Link>
       </nav>
       <div className="socials">
-        <a href="">
-          <img src={twitter} alt="twitter" />
+        <a href="https://twitter.com/Amanu_nft" target="_blank">
+          <LazyLoadImage src={twitter} alt="twitter" />
         </a>
-        <a href="">
-          <img src={discord} alt="discord" />
+        <a href="https://discord.gg/SgxBWX98Hy" target="_blank">
+          <LazyLoadImage src={discord} alt="discord" />
         </a>
-        <a href="">
-          <img src={instagram} alt="instagram" />
+        <a href="https://instagram.com/amanu.nft" target="_blank">
+          <LazyLoadImage src={instagram} alt="instagram" />
         </a>
       </div>
     </header>

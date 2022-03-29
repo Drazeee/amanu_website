@@ -39,6 +39,7 @@ footer {
         a {
             font-size: 1.1rem;
             font-weight: 300;
+            cursor: pointer;
         }
 
         p {
@@ -86,6 +87,7 @@ footer {
                 margin-bottom: 1.2rem;
                 text-decoration: none;
                 display: block;
+                cursor: pointer;
                 font-size: 1.1rem;
 
                 &:last-of-type {

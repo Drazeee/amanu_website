@@ -73,10 +73,18 @@ export default function Footer() {
         </div>
         <div className="items">
           <h6>SOCIALS</h6>
-          <a href="">Twitter</a>
-          <a href="">Discord</a>
-          <a href="">Instagram</a>
-          <a href="">Facebook</a>
+          <a href="https://twitter.com/Amanu_nft" target="_blank">
+            Twitter
+          </a>
+          <a href="https://discord.gg/SgxBWX98Hy" target="_blank">
+            Discord
+          </a>
+          <a href="https://instagram.com/amanu.nft" target="_blank">
+            Instagram
+          </a>
+          <a href="https://linkedin.com/company/amanu-io" target="_blank">
+            LinkedIn
+          </a>
         </div>
         <div className="items">
           <h6>COMPANY</h6>

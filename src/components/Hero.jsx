@@ -2,6 +2,8 @@ import React from "react";
 
 import "../scss/Hero.scss";
 
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import hero_image from "../assets/hero-image.png";
 import arrow_up from "../assets/arrows/arrow_up.svg";
 import arrow_right from "../assets/arrows/arrow_right.svg";
@@ -48,21 +50,21 @@ export default function Hero() {
                   </svg>
                 </div>
                 <span>TWITTER</span>
-                <img src={arrow_up} alt="" />
+                <LazyLoadImage src={arrow_up} alt="" />
               </button>
             </a>
             <a href="https://discord.gg/SgxBWX98Hy" target="_blank">
               <span>Join our discord</span>
-              <img src={arrow_right} alt="" />
+              <LazyLoadImage src={arrow_right} alt="" />
             </a>
           </div>
         </div>
-        <img src={hero_image} alt="arts" className="noselect" />
+        <LazyLoadImage src={hero_image} alt="arts" className="noselect" />
       </div>
       <div className="safearea partners">
-        <img src={spatial} alt="" />
-        <img src={opensea} alt="" />
-        <img src={ledger} alt="" />
+        <LazyLoadImage src={spatial} alt="" />
+        <LazyLoadImage src={opensea} alt="" />
+        <LazyLoadImage src={ledger} alt="" />
       </div>
     </>
   );

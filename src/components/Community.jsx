@@ -3,6 +3,8 @@ import { Emoji } from "react-apple-emojis";
 
 import "../scss/Community.scss";
 
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import com_img from "../assets/community.png";
 
 export default function Community() {
@@ -34,7 +36,7 @@ export default function Community() {
             work, they are actors of this new world!
           </p>
         </div>
-        <img src={com_img} alt="" className="noselect" />
+        <LazyLoadImage src={com_img} alt="" className="noselect" />
       </div>
 
       <div className="key_numbers">

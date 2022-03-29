@@ -3,6 +3,8 @@ import { Emoji } from "react-apple-emojis";
 
 import "../scss/About.scss";
 
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import stars from "../assets/about/stars.svg";
 import pots from "../assets/about/pots.png";
 import eth from "../assets/about/eth.svg";
@@ -108,7 +110,7 @@ export default function About() {
   return (
     <div className="safearea about" id="about">
       <section>
-        <img src="" alt="" />
+        <LazyLoadImage src="" alt="" />
         <div className="content">
           <h4>About Us</h4>
           <h2>
@@ -147,13 +149,13 @@ export default function About() {
             sell it, you earn percentage of the total amount.
           </p>
         </div>
-        <img src="" alt="" />
+        <LazyLoadImage src="" alt="" />
       </section>
       <div className="process">
         <div className="top">
           <h2>
             A <strong>simple</strong> and <strong>clear</strong>{" "}
-            <img src={stars} alt="" />
+            <LazyLoadImage src={stars} alt="" />
             <br />
             method for your <strong>community</strong>
           </h2>
@@ -167,7 +169,7 @@ export default function About() {
           </p>
         </div>
         <div className="sticky">
-          <img src={pots} alt="" className="pots noselect" />
+          <LazyLoadImage src={pots} alt="" className="pots noselect" />
           <div className="unclaimed_nft">
             <div className="top" ref={top}></div>
             <div className="infos">
@@ -177,7 +179,7 @@ export default function About() {
                   <div>
                     <h6>Price</h6>
                     <div>
-                      <img src={eth} alt="" />
+                      <LazyLoadImage src={eth} alt="" />
                       <p>{Price[step]} ETH</p>
                     </div>
                   </div>

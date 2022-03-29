@@ -3,6 +3,8 @@ import { Emoji } from "react-apple-emojis";
 
 import "../scss/Team.scss";
 
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import arrow_up from "../assets/arrows/arrow_up.svg";
 import arrow_right from "../assets/arrows/arrow_right.svg";
 import us from "../assets/team/us.png";
@@ -17,14 +19,14 @@ export default function Team() {
     <div className="safearea team">
       <div className="images">
         <div className="fith">
-          <img src={csimonmeunier_meta} alt="" />
+          <LazyLoadImage src={csimonmeunier_meta} alt="" />
         </div>
         <div className="fourth">
           <a
             href="https://www.linkedin.com/in/charles-simon-meunier/"
             target="_blank"
           >
-            <img src={csimonmeunier} alt="" />
+            <LazyLoadImage src={csimonmeunier} alt="" />
           </a>
         </div>
         <div className="third">
@@ -32,19 +34,19 @@ export default function Team() {
             href="https://www.linkedin.com/in/gianluca-minoprio/"
             target="_blank"
           >
-            <img src={gminoprio} alt="" />
+            <LazyLoadImage src={gminoprio} alt="" />
           </a>
         </div>
         <div className="second">
           <a href="https://www.linkedin.com/in/quentin-fisch/" target="_blank">
-            <img src={qfisch} alt="" />
+            <LazyLoadImage src={qfisch} alt="" />
           </a>
         </div>
         <div className="first">
-          <img src={qfisch_meta} alt="" />
+          <LazyLoadImage src={qfisch_meta} alt="" />
         </div>
         <div className="us">
-          <img src={us} alt="" />
+          <LazyLoadImage src={us} alt="" />
         </div>
       </div>
       <div className="content">
@@ -77,12 +79,12 @@ export default function Team() {
                 </svg>
               </div>
               <span>TWITTER</span>
-              <img src={arrow_up} alt="" />
+              <LazyLoadImage src={arrow_up} alt="" />
             </button>
           </a>
           <a href="https://discord.gg/SgxBWX98Hy" target="_blank">
             <span>Join our discord</span>
-            <img src={arrow_right} alt="" />
+            <LazyLoadImage src={arrow_right} alt="" />
           </a>
         </div>
       </div>
