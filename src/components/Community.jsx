@@ -22,7 +22,7 @@ export default function Community() {
           </p>
           <p>
             Together, we will bring your art to this new world! Owning a gallery
-            in the <b>Metaverse</b> is a way for you to shine and{" "}
+            in the <b>Metaverses</b> is a way for you to shine and{" "}
             <b>meet a new community</b>. Your location is no longer a limit.
             Everyone can observe and savor you work.
           </p>
@@ -81,13 +81,13 @@ export default function Community() {
             </h4>
             <h5>NFT Art</h5>
             <p>
-              Art & Metaverse represent 16% of all the sales in the NFT market.
+              Art & Metaverses represent 16% of all the sales in the NFT market.
               So much opportunities !
             </p>
           </div>
         </div>
         <p>
-          Artists are the people we expect in the metaverse. NFTs are built for
+          Artists are the people we expect in the metaverses. NFTs are built for
           you in order to show your work in all over the world, increase your
           community, and avoid fraud in the secondary market.
         </p>

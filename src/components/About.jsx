@@ -6,17 +6,29 @@ import "../scss/About.scss";
 import stars from "../assets/about/stars.svg";
 import pots from "../assets/about/pots.png";
 import eth from "../assets/about/eth.svg";
+import { Content } from "./content";
+import { Title } from "./title";
+import { Price } from "./price";
 
 export default function About() {
   const button = React.useRef(null);
   const top = React.useRef(null);
+  const title = React.useRef(null);
+  const content = React.useRef(null);
+  const steps = React.useRef(null);
 
   const [step, setStep] = React.useState(0);
 
   function addStep() {
+    if (step > 1) {
+      return;
+    }
     setStep(step + 1);
-    switch (step)
-    {
+    for (var i = 0; i < 3; i++) {
+      steps.current.children[i].classList.remove("active");
+    }
+    steps.current.children[step + 1].classList.add("active");
+    switch (step) {
       case 0:
         firstStep();
         break;
@@ -26,18 +38,71 @@ export default function About() {
     }
   }
 
+  React.useEffect(() => {
+    switch (step) {
+      case 0:
+        initialStep();
+        break;
+      case 1:
+        firstStep();
+        break;
+      case 2:
+        secondStep();
+        break;
+    }
+    for (var i = 0; i < 3; i++) {
+      steps.current.children[i].classList.remove("active");
+    }
+    steps.current.children[step].classList.add("active");
+  }, []);
+
+  function subStep() {
+    if (step < 1) {
+      return;
+    }
+    setStep(step - 1);
+    for (var i = 0; i < 3; i++) {
+      steps.current.children[i].classList.remove("active");
+    }
+    steps.current.children[step - 1].classList.add("active");
+    switch (step) {
+      case 1:
+        initialStep();
+        break;
+      case 2:
+        firstStep();
+        break;
+    }
+  }
+
   function firstStep() {
-    button.current.classList.add('second');
-    button.current.children[0].innerHTML = "Claim Now"
-    top.current.classList.add('second');
+    button.current.classList.add("second");
+    button.current.children[0].innerHTML = "Claim Now";
+    top.current.classList.add("second");
+    content.current.innerHTML = Content[1];
+    title.current.innerHTML = Title[1];
+    button.current.classList.remove("third");
+    top.current.classList.remove("third");
+  }
+
+  function initialStep() {
+    button.current.classList.remove("second");
+    button.current.children[0].innerHTML = "Buy Now";
+    top.current.classList.remove("second");
+    content.current.innerHTML = Content[0];
+    title.current.innerHTML = Title[0];
+    button.current.classList.remove("third");
+    top.current.classList.remove("third");
   }
 
   function secondStep() {
-    button.current.classList.add('third');
-    button.current.children[0].innerHTML = "Resell"
-    top.current.classList.add('third');
-    button.current.classList.remove('second');
-    top.current.classList.remove('second');
+    button.current.classList.add("third");
+    button.current.children[0].innerHTML = "Resell";
+    top.current.classList.add("third");
+    button.current.classList.remove("second");
+    top.current.classList.remove("second");
+    content.current.innerHTML = Content[2];
+    title.current.innerHTML = Title[2];
   }
 
   return (
@@ -101,7 +166,7 @@ export default function About() {
             order the work associated with it.
           </p>
         </div>
-        <div className="sticky" id="about-scroll">
+        <div className="sticky">
           <img src={pots} alt="" className="pots noselect" />
           <div className="unclaimed_nft">
             <div className="top" ref={top}></div>
@@ -113,7 +178,7 @@ export default function About() {
                     <h6>Price</h6>
                     <div>
                       <img src={eth} alt="" />
-                      <p>0.34 ETH</p>
+                      <p>{Price[step]} ETH</p>
                     </div>
                   </div>
                   <div>
@@ -125,12 +190,55 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-                <button className="noselect" ref={button} onClick={() => addStep()}>
-                  <p>Order Now</p>
+                <button
+                  className="noselect"
+                  ref={button}
+                  onClick={() => addStep()}
+                >
+                  <p>Buy Now</p>
                 </button>
               </div>
             </div>
           </div>
+          <div className="desc">
+            <div>
+              <h6>STEP {step + 1}</h6>
+              <h5 ref={title}>
+                Le certificat associé à votre travail est acheté
+              </h5>
+            </div>
+            <div className="mid">
+              <button className="back" onClick={subStep}>
+                {"<"}
+              </button>
+              <div ref={steps}>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+              </div>
+              <button className="next" onClick={addStep}>
+                {">"}
+              </button>
+            </div>
+            <div>
+              <p ref={content}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                congue fermentum ornare. In hac habitasse platea dictumst. Ut
+                nec felis ut velit rhoncus cursus in in massa. Ut ut lacus at
+                eros cursus facilisis quis nec massa. Duis lacinia mollis
+                libero, non hendrerit metus tempor ac.
+                <br />
+                <br />
+                Quisque lacus lectus, tempor eget bibendum et, consequat at
+                purus. Praesent eleifend bibendum lectus, non consectetur metus
+                tincidunt vel. Donec a augue in tellus pulvinar vestibulum.
+                Fusce odio quam, venenatis id lorem vel, tristique rutrum odio.
+                In vel nisl a lectus suscipit rutrum nec interdum lorem. Donec
+                condimentum rhoncus ullamcorper.
+              </p>
+            </div>
+          </div>
+          <div className="height"></div>
         </div>
       </div>
     </div>
