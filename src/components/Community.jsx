@@ -3,7 +3,7 @@ import { Emoji } from "react-apple-emojis";
 
 import "../scss/Community.scss";
 
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import com_img from "../assets/community.png";
 

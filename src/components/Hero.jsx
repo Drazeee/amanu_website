@@ -2,7 +2,7 @@ import React from "react";
 
 import "../scss/Hero.scss";
 
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import hero_image from "../assets/hero-image.png";
 import arrow_up from "../assets/arrows/arrow_up.svg";
