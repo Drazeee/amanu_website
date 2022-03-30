@@ -124,11 +124,24 @@
                 position: sticky;
                 z-index: 2;
                 top: calc(20vh);
+
+                @media screen and (max-width: 1000px) {
+                    width: 180px;
+                }
+
+                @media screen and (max-width: 900px) {
+                    top: 10vh;
+                }
             }
 
             .unclaimed_nft {
                 height: 480px;
                 width: 330px;
+                @media screen and (max-width: 1000px)
+                {
+                    height: 350px;
+                    width: 250px;
+                }
                 margin-top: 80vh;
                 position: sticky;
                 top: calc(20vh - 20px);
@@ -136,6 +149,10 @@
                 overflow: hidden;
                 box-shadow: 0px 0px 20px rgba(0, 0, 30, 0.2);
                 z-index: 1;
+
+                @media screen and (max-width: 900px) {
+                    top: calc(10vh - 20px);
+                }
 
                 .infos {
                     background: #fff;
@@ -146,9 +163,17 @@
                     z-index: 2;
                     padding: 15px 30px;
 
+                    @media screen and (max-width: 1000px) {
+                        padding: 10px 20px;
+                    }
+
                     h5 {
                         font-weight: 500;
                         font-size: 1.35rem;
+
+                        @media screen and (max-width: 1000px) {
+                            font-size: 1.1rem;
+                        }
                     }
 
                     display: flex;
@@ -167,6 +192,10 @@
                                 font-size: .9rem;
                                 font-family: "Poppins", sans-serif;
                                 font-weight: 400;
+
+                                @media screen and (max-width: 1000px) {
+                                    font-size: .8rem;
+                                }
                             }
 
                             > div {
@@ -177,6 +206,10 @@
 
                                 img {
                                     height: 1.4rem;
+
+                                    @media screen and (max-width: 1000px) {
+                                        height: 1.2rem;
+                                    }
                                 }
                             }
 
@@ -187,9 +220,17 @@
                                 font-size: .95rem;
                                 font-weight: 500;
 
+                                @media screen and (max-width: 1000px) {
+                                    font-size: .75rem;
+                                }
+
                                 small {
                                     font-size: .8rem;
                                     font-weight: 400;
+
+                                    @media screen and (max-width: 1000px) {
+                                        font-size: .7rem;
+                                    }
                                 }
                             }
 
@@ -206,6 +247,11 @@
                         height: 60px;
                         border-radius: 15px;
                         margin-top: .6rem;
+
+                        @media screen and (max-width: 1000px) {
+                            height: 40px;
+                            border-radius: 10px;
+                        }
                         cursor: pointer;
                         display: flex;
                         justify-content: center;
@@ -222,6 +268,10 @@
                             font-weight: 500;
                             font-size: 1.2rem;
                             transition: all .5s ease-in-out;
+
+                            @media screen and (max-width: 1000px) {
+                                font-size: 1.1rem;
+                            }
                         }
 
                         &.second {
@@ -254,8 +304,17 @@
                     z-index: -1;
                     transition: border .5s ease-in-out;
 
+                    @media screen and (max-width: 1000px) {
+                        border: 5px solid #71D84C;
+                    }
+
                     &.second, &.third {
                         border: 7px solid #ECD92D;
+
+                        @media screen and (max-width: 1000px)
+                        {
+                            border: 5px solid #ECD92D;
+                        }
                     }
                 }
             }
@@ -267,12 +326,41 @@
                 position: sticky;
                 top: 20vh;
                 margin-top: -460px;
+                @media screen and (max-width: 900px) {
+                    top: calc(20vh + 350px);
+                }
+
+                @media screen and (max-width: 900px) {
+                    flex-direction: column;
+                    align-items: center;
+                    padding-top: 80px;
+                    top: calc(10vh + 350px);
+                    height: calc(80vh - 350px);
+                    overflow-y: auto;
+                }
 
                 p {
                     margin: 0;
                     padding: 0;
                     width: fit-content;
                     max-width: 80%;
+
+                    @media screen and (max-width: 1500px)
+                    {
+                        font-size: .9rem;
+                        line-height: 1.3rem;
+                    }
+
+                    @media screen and (max-width: 1250px)
+                    {
+                        max-width: 100%;
+                    }
+
+                    @media screen and (max-width: 1000px)
+                    {
+                        font-size: .8rem;
+                        line-height: 1.2rem;
+                    }
                 }
 
                 h6 {
@@ -285,6 +373,17 @@
                     font-weight: 400;
                     max-width: 75%;
                     margin-top: 1rem;
+
+                    @media screen and (max-width: 1500px)
+                    {
+                        font-size: 1.8rem;
+                        line-height: 2.2rem;
+                    }
+
+                    @media screen and (max-width: 1250px)
+                    {
+                        max-width: 100%;
+                    }
                 }
 
                 > div {
@@ -294,12 +393,30 @@
                     align-items: flex-start;
                     justify-content: flex-start;
                     width: calc(50% - 185px);
+                    @media screen and (max-width: 1000px)
+                    {
+                        width: calc(50% - 100px);
+                    }
+
+                    @media screen and (max-width: 900px)
+                    {
+                        width: 100%;
+                    }
 
                     &:first-of-type {
                         text-align: right;
                         align-items: flex-end;
                         justify-content: flex-end;
+
+                        @media screen and (max-width: 900px) {
+                            text-align: left;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                            margin-bottom: 1rem;
+                        }
                     }
+
+                    position: relative;
 
                     &.mid {
                         width: 330px;
@@ -309,6 +426,20 @@
                         justify-content: space-between;
                         flex-direction: row;
                         padding: 0 2rem;
+
+                        @media screen and (max-width: 1000px) {
+                            width: 330px;
+                            height: 400px;
+                        }
+
+                        @media screen and (max-width: 900px) {
+                            width: 300px;
+                            max-width: 100%;
+                            height: auto;
+                            position: absolute;
+                            transform: translateY(-60px);
+                        }
+                        
 
                         > div {
                             display: flex;

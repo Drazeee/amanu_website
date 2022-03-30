@@ -3,7 +3,7 @@ import { Emoji } from "react-apple-emojis";
 
 import "../scss/Team.scss";
 
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import arrow_up from "../assets/arrows/arrow_up.svg";
 import arrow_right from "../assets/arrows/arrow_right.svg";

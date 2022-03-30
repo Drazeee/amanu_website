@@ -78,6 +78,11 @@
             border-radius: 40px;
         }
 
+        @media screen and (max-width: 650px) {
+            height: fit-content;
+            border-radius: 30px;
+        }
+
         @media screen and (max-width: 600px) {
             padding: 30px 50px;
         }

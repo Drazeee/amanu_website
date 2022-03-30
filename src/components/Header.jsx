@@ -4,7 +4,7 @@ import discord from "../assets/socials/discord.svg";
 import instagram from "../assets/socials/instagram.svg";
 import { Link } from "react-scroll";
 
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import "../scss/Header.scss";
 
