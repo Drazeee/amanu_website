@@ -20,7 +20,7 @@ export default function Home() {
       <Faq />
       <Team />
       <CallToAction />
-      <Footer />
+      <Footer home={true} />
     </>
   );
 }

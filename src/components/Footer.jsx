@@ -4,7 +4,7 @@ import "../scss/Footer.scss";
 
 import { Link } from "react-scroll";
 
-export default function Footer() {
+export default function Footer({ home }) {
   return (
     <footer className="safearea">
       <div className="left">
@@ -19,61 +19,70 @@ export default function Footer() {
       </div>
       <div className="right">
         <div className="items">
-          <h6>NAVIGATIONS</h6>
-          <Link
-            activeClass="active"
-            to="about"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={900}
-          >
-            About
-          </Link>
-          <Link
-            activeClass="active"
-            to="community"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={800}
-          >
-            Community
-          </Link>
-          <Link
-            activeClass="active"
-            to="roadmap"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={700}
-          >
-            Roadmap
-          </Link>
-          <Link
-            activeClass="active"
-            to="faq"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={600}
-          >
-            FAQ
-          </Link>
-          <Link
-            activeClass="active"
-            to="team"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >
-            Team
-          </Link>
+          <h6>NAVIGATION</h6>
+          {home ? (
+            <>
+              <Link
+                activeClass="active"
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={900}
+              >
+                About
+              </Link>
+              <Link
+                activeClass="active"
+                to="community"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={800}
+              >
+                Community
+              </Link>
+              <Link
+                activeClass="active"
+                to="roadmap"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={700}
+              >
+                Roadmap
+              </Link>
+              <Link
+                activeClass="active"
+                to="faq"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={600}
+              >
+                FAQ
+              </Link>
+              <Link
+                activeClass="active"
+                to="team"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                Team
+              </Link>
+            </>
+          ) : (
+            <>
+              <a href="/">Home</a>
+              <a href="/redeem">Redeem</a>
+            </>
+          )}
         </div>
         <div className="items">
           <h6>SOCIALS</h6>
-          <a href="https://twitter.com/Amanu_nft" target="_blank">
+          <a href="https://twitter.com/amanu_nft" target="_blank">
             Twitter
           </a>
           <a href="https://discord.gg/SgxBWX98Hy" target="_blank">
@@ -82,7 +91,7 @@ export default function Footer() {
           <a href="https://instagram.com/amanu.nft" target="_blank">
             Instagram
           </a>
-          <a href="https://linkedin.com/company/amanu-io" target="_blank">
+          <a href="https://linkedin.com/company/amanu-nft" target="_blank">
             LinkedIn
           </a>
         </div>

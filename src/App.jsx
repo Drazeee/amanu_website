@@ -3,6 +3,7 @@ import Home from "./pages/Home.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { EmojiProvider } from "react-apple-emojis";
 import emojiData from "react-apple-emojis/lib/data.json";
+import Redeem from "./pages/Redeem";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Home />} />
+          <Route path="/redeem" element={<Redeem />} />
         </Routes>
       </EmojiProvider>
     </BrowserRouter>

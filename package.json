@@ -3,13 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "format": "prettier --write \"./**/*.{js,jsx,json}\""
+    "format": "prettier --write \"./src/**/*.{js,jsx,json}\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.0.0",
+    "@stripe/react-stripe-js": "^1.7.0",
+    "@stripe/stripe-js": "^1.26.0",
     "ethers": "^5.6.2",
     "font-awesome": "^4.7.0",
     "framer-motion": "^6.2.7",
@@ -19,10 +21,15 @@
     "react-dom": "^17.0.2",
     "react-helmet-async": "^1.2.3",
     "react-lazy-load-image-component": "^1.5.3",
+    "react-loading-icons": "^1.0.8",
     "react-optimized-image": "^0.4.1",
     "react-router-dom": "^6.2.1",
     "react-scroll": "^1.8.6",
     "react-scroll-parallax": "^3.0.4",
+    "react-select": "^5.2.2",
+    "react-select-country-list": "^2.2.3",
+    "react-toastify": "^8.2.0",
+    "reactjs-popup": "^2.0.5",
     "sass": "^1.49.8",
     "swiper": "^8.0.7"
   },

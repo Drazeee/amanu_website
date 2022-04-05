@@ -14,7 +14,13 @@ body {
 }
 
 .safearea {
-    margin: 0 8%;
+    margin: 0 calc((100vw - 1400px) / 2);
+}
+
+@media screen and (max-width: 1700px) {
+    .safearea {
+        margin: 0 8%;
+    }
 }
 
 @media screen and (max-width: 600px) {
