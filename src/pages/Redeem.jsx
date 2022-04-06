@@ -30,41 +30,31 @@ export default function Redeem() {
   const [offset, setOffset] = React.useState(0);
 
   const totalNFTS = async (own) => {
-    if (!own) {
-      const addr = await signer?.getAddress();
-      var nfts = [];
-      var nftsToClaim = [];
-      for (var i = 0; i < contracts.length; i++) {
-        var contract = contracts[i];
-        var _nfts = await contract?.getTokenIdFromOwner(addr);
-        var count = await contract?.balanceOf(addr);
-        var res = [];
-        var unclaimed = [];
-        for (var j = 0; j < count; j++) {
-          var nb = parseInt(_nfts[j]._hex);
-          if (await contract?.isPhysicalAvailable(nb)) {
-            unclaimed.push(nb);
-          } else {
-            res.push(nb);
-          }
-        }
-        for (var j = 0; j < res.length; j++) {
-          nfts.push({ id: res[j], contract: contract });
-        }
-        for (var j = 0; j < unclaimed.length; j++) {
-          nftsToClaim.push({ id: unclaimed[j], contract: contract });
-        }
-        setNFTS(nfts);
-        setNFTSToClaim(nftsToClaim);
-      }
-    } else {
-      const count = await contract?.count();
-      setNFTSAmount(count);
+    const addr = await signer?.getAddress();
+    var nfts = [];
+    var nftsToClaim = [];
+    for (var i = 0; i < contracts.length; i++) {
+      var contract = contracts[i];
+      var _nfts = await contract?.getTokenIdFromOwner(addr);
+      var count = await contract?.balanceOf(addr);
       var res = [];
-      for (var i = 0; i < count; i++) {
-        res.push(parseInt(i));
+      var unclaimed = [];
+      for (var j = 0; j < count; j++) {
+        var nb = parseInt(_nfts[j]._hex);
+        if (await contract?.isPhysicalAvailable(nb)) {
+          unclaimed.push(nb);
+        } else {
+          res.push(nb);
+        }
       }
-      setNFTS(res);
+      for (var j = 0; j < res.length; j++) {
+        nfts.push({ id: res[j], contract: contract });
+      }
+      for (var j = 0; j < unclaimed.length; j++) {
+        nftsToClaim.push({ id: unclaimed[j], contract: contract });
+      }
+      setNFTS(nfts);
+      setNFTSToClaim(nftsToClaim);
     }
   };
 
@@ -80,7 +70,7 @@ export default function Redeem() {
     return addr;
   }
 
-  React.useEffect(async () => {
+  async function initWallet() {
     try {
       window.ethereum.request({ method: "eth_requestAccounts" });
       if (window.ethereum) {
@@ -121,11 +111,15 @@ export default function Redeem() {
         progress: undefined,
       });
     }
+  }
+
+  React.useEffect(() => {
+    initWallet();
   }, []);
 
   const [loaded, setLoaded] = React.useState(false);
 
-  React.useEffect(async () => {
+  async function initNFTs() {
     setLoaded(false);
     if (chainId != CHAIN_ID) {
       if (chainId > 0) {
@@ -145,6 +139,10 @@ export default function Redeem() {
     setNFTSToClaim([]);
     await totalNFTS(false);
     setLoaded(true);
+  }
+
+  React.useEffect(async () => {
+    initNFTs();
   }, [contracts, chainId]);
 
   return (

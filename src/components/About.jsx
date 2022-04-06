@@ -6,11 +6,11 @@ import "../scss/About.scss";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import stars from "../assets/about/stars.svg";
-import pots from "../assets/about/pots.png";
-import eth from "../assets/about/eth.svg";
+// import pots from "../assets/about/pots.png";
+// import eth from "../assets/about/eth.svg";
 import { Content } from "./content";
 import { Title } from "./title";
-import { Price } from "./price";
+// import { Price } from "./price";
 
 export default function About() {
   const button = React.useRef(null);

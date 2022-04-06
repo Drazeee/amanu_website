@@ -3,7 +3,7 @@ import twitter from "../assets/socials/twitter.svg";
 import discord from "../assets/socials/discord.svg";
 import instagram from "../assets/socials/instagram.svg";
 import { Link } from "react-router-dom";
-import { Link as SmoothLink, animateScroll as scroll } from "react-scroll";
+import { Link as SmoothLink } from "react-scroll";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 

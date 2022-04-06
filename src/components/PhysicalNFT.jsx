@@ -5,8 +5,6 @@ import Popup from "reactjs-popup";
 import "../scss/PhysicalNFT.scss";
 import "reactjs-popup/dist/index.css";
 
-import pots from "../assets/about/pots.png";
-
 export default function PhysicalNFT({
   claimed,
   address,
@@ -52,12 +50,16 @@ export default function PhysicalNFT({
   const [contractName, setContractName] = React.useState("");
   const [contractSymbol, setContractSymbol] = React.useState("");
 
-  React.useEffect(async () => {
+  async function initMetadata() {
     await getURI();
     await getPhysicalStatus();
     setContractName(await contract.name());
     setContractSymbol(await contract.symbol());
     setLoaded(true);
+  }
+
+  React.useEffect(async () => {
+    initMetadata();
   }, []);
 
   async function getPhysicalAsset(obj) {
@@ -125,12 +127,8 @@ export default function PhysicalNFT({
         {isPhysicalAvailable ? (
           <Popup
             trigger={
-              <button
-                className={
-                  !isPhysicalAvailable ? "noselec claimed" : "noselect"
-                }
-              >
-                <p>{!isPhysicalAvailable ? "Sell" : "Claim Now"}</p>
+              <button className={"noselect"}>
+                <p>{"Claim Now"}</p>
               </button>
             }
             modal
