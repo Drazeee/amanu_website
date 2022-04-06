@@ -9,9 +9,12 @@ import "react-toastify/dist/ReactToastify.css";
 
 import "../scss/Redeem.scss";
 
-import ABI from "../assets/NFTAbi.json";
-
-const contractAddress = ["0x70C398faA01C62725b23B02a85f0803D32161892"];
+const contractAddress = [
+  {
+    address: "0x70C398faA01C62725b23B02a85f0803D32161892",
+    abi: "https://amanu.io/abi/AMANU.json",
+  },
+];
 const CHAIN_ID = 4;
 const CHAIN_NAME = "Rinkeby";
 
@@ -79,6 +82,7 @@ export default function Redeem() {
 
   React.useEffect(async () => {
     try {
+      window.ethereum.request({ method: "eth_requestAccounts" });
       if (window.ethereum) {
         window.ethereum.on("chainChanged", async () => {
           window.location.reload();
@@ -91,13 +95,17 @@ export default function Redeem() {
       const signer = await provider.getSigner();
       setSigner(signer);
       var contracts = [];
-      for (var i = 0; i < contractAddress.length; i++) {
-        const contract = new ethers.Contract(
-          contractAddress[i],
-          ABI.abi,
-          signer
-        );
-        contracts.push(contract);
+      for (
+        var contractIndex = 0;
+        contractIndex < contractAddress.length;
+        contractIndex++
+      ) {
+        var addr = await contractAddress[contractIndex]?.address;
+        fetch(contractAddress[contractIndex]?.abi).then(async (response) => {
+          var res = await response.json();
+          const contract = new ethers.Contract(addr, res.abi, signer);
+          contracts.push(contract);
+        });
       }
       setContracts(contracts);
       setChainId(await (await provider.getNetwork()).chainId);

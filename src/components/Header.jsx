@@ -3,6 +3,7 @@ import twitter from "../assets/socials/twitter.svg";
 import discord from "../assets/socials/discord.svg";
 import instagram from "../assets/socials/instagram.svg";
 import { Link } from "react-router-dom";
+import { Link as SmoothLink, animateScroll as scroll } from "react-scroll";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -20,7 +21,7 @@ export default function Header({ back }) {
       )}
       {back ? null : (
         <nav>
-          <Link
+          <SmoothLink
             activeClass="active"
             to="about"
             spy={true}
@@ -29,8 +30,8 @@ export default function Header({ back }) {
             duration={500}
           >
             About
-          </Link>
-          <Link
+          </SmoothLink>
+          <SmoothLink
             activeClass="active"
             to="community"
             spy={true}
@@ -39,8 +40,8 @@ export default function Header({ back }) {
             duration={600}
           >
             Community
-          </Link>
-          <Link
+          </SmoothLink>
+          <SmoothLink
             activeClass="active"
             to="roadmap"
             spy={true}
@@ -49,18 +50,8 @@ export default function Header({ back }) {
             duration={700}
           >
             Roadmap
-          </Link>
-          <Link
-            activeClass="active"
-            to="faq"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={800}
-          >
-            FAQ
-          </Link>
-          <Link
+          </SmoothLink>
+          <SmoothLink
             activeClass="active"
             to="team"
             spy={true}
@@ -69,7 +60,8 @@ export default function Header({ back }) {
             duration={900}
           >
             Team
-          </Link>
+          </SmoothLink>
+          <Link to="/redeem">Redeem</Link>
         </nav>
       )}
       <div className="socials">

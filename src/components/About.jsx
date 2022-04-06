@@ -40,23 +40,23 @@ export default function About() {
     }
   }
 
-  React.useEffect(() => {
-    switch (step) {
-      case 0:
-        initialStep();
-        break;
-      case 1:
-        firstStep();
-        break;
-      case 2:
-        secondStep();
-        break;
-    }
-    for (var i = 0; i < 3; i++) {
-      steps.current.children[i].classList.remove("active");
-    }
-    steps.current.children[step].classList.add("active");
-  }, []);
+  // React.useEffect(() => {
+  //   switch (step) {
+  //     case 0:
+  //       initialStep();
+  //       break;
+  //     case 1:
+  //       firstStep();
+  //       break;
+  //     case 2:
+  //       secondStep();
+  //       break;
+  //   }
+  //   for (var i = 0; i < 3; i++) {
+  //     steps.current.children[i].classList.remove("active");
+  //   }
+  //   steps.current.children[step].classList.add("active");
+  // }, []);
 
   function subStep() {
     if (step < 1) {
@@ -168,7 +168,8 @@ export default function About() {
             order the work associated with it.
           </p>
         </div>
-        <div className="sticky">
+        <div className="sticky" style={{ height: "95vh" }}></div>
+        {/* <div className="sticky">
           <LazyLoadImage src={pots} alt="" className="pots noselect" />
           <div className="unclaimed_nft">
             <div className="top" ref={top}></div>
@@ -241,7 +242,7 @@ export default function About() {
             </div>
           </div>
           <div className="height"></div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
