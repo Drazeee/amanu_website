@@ -137,7 +137,7 @@ export default function Redeem() {
     }
     setNFTS([]);
     setNFTSToClaim([]);
-    await totalNFTS(false);
+    await totalNFTS();
     setLoaded(true);
   }
 
