@@ -58,7 +58,7 @@ export default function PhysicalNFT({
     setLoaded(true);
   }
 
-  React.useEffect(async () => {
+  React.useEffect(() => {
     initMetadata();
   }, []);
 

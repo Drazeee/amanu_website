@@ -29,7 +29,7 @@ export default function Redeem() {
 
   const [offset, setOffset] = React.useState(0);
 
-  const totalNFTS = async (own) => {
+  const totalNFTS = async () => {
     const addr = await signer?.getAddress();
     var nfts = [];
     var nftsToClaim = [];
@@ -141,7 +141,7 @@ export default function Redeem() {
     setLoaded(true);
   }
 
-  React.useEffect(async () => {
+  React.useEffect(() => {
     initNFTs();
   }, [contracts, chainId]);
 
