@@ -17,6 +17,21 @@ const contractAddress = [
 ];
 const CHAIN_ID = 4;
 const CHAIN_NAME = "Rinkeby";
+const CHAIN_INFO = {
+  chainId: "0x4",
+  rpcUrls: ["https://rinkeby.infura.io/v3/"],
+  chainName: "Rinkeby Test Network",
+  nativeCurrency: {
+    name: "ETH",
+    symbol: "ETH",
+    decimals: 18,
+  },
+  blockExplorerUrls: ["https://rinkeby.etherscan.io"],
+}
+
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
 
 export default function Redeem() {
   const [nfts, setNFTS] = React.useState([]);
@@ -30,11 +45,15 @@ export default function Redeem() {
   const [offset, setOffset] = React.useState(0);
 
   const totalNFTS = async () => {
+    console.log("totalNFTS");
+    console.log("contracts", contracts);
     const addr = await signer?.getAddress();
     var nfts = [];
     var nftsToClaim = [];
-    for (var i = 0; i < contracts.length; i++) {
-      var contract = contracts[i];
+    console.log(contractIndex, contracts.length);
+    for (var contractIndex = 0; contractIndex < contracts.length; contractIndex++) {
+      console.log("je suis sur aue je suis dans le for");
+      var contract = contracts[contractIndex];
       var _nfts = await contract?.getTokenIdFromOwner(addr);
       var count = await contract?.balanceOf(addr);
       var res = [];
@@ -54,7 +73,10 @@ export default function Redeem() {
         nftsToClaim.push({ id: unclaimed[j], contract: contract });
       }
       setNFTS(nfts);
+      console.log(nfts);
+      console.log("nfts", nfts);
       setNFTSToClaim(nftsToClaim);
+      console.log("nftsToClaim", nftsToClaim);
     }
   };
 
@@ -68,6 +90,15 @@ export default function Redeem() {
       return addr.substring(0, 6) + "..." + addr.substring(size - 4);
     }
     return addr;
+  }
+
+  const [collections, setCollections] = React.useState([]);
+
+  async function loadCollections() {
+    fetch("https://amanu.io:3000/collections").then(async (response) => {
+      var collections = await response.json();
+      setCollections(collections);
+    });
   }
 
   async function initWallet() {
@@ -87,17 +118,20 @@ export default function Redeem() {
       var contracts = [];
       for (
         var contractIndex = 0;
-        contractIndex < contractAddress.length;
+        contractIndex < collections.length;
         contractIndex++
       ) {
-        var addr = await contractAddress[contractIndex]?.address;
-        fetch(contractAddress[contractIndex]?.abi).then(async (response) => {
+        var addr = await collections[contractIndex]?.address;
+        fetch(
+          "https://amanu.io:3000/abi/" + collections[contractIndex]?.id
+        ).then(async (response) => {
           var res = await response.json();
           const contract = new ethers.Contract(addr, res.abi, signer);
           contracts.push(contract);
         });
       }
       setContracts(contracts);
+      await sleep(1000);
       setChainId(await (await provider.getNetwork()).chainId);
       setAddress(await signer.getAddress());
     } catch (e) {
@@ -114,7 +148,12 @@ export default function Redeem() {
   }
 
   React.useEffect(() => {
+    console.log("collections", collections);
     initWallet();
+  }, [collections]);
+
+  React.useEffect(() => {
+    loadCollections();
   }, []);
 
   const [loaded, setLoaded] = React.useState(false);
@@ -132,6 +171,19 @@ export default function Redeem() {
           draggable: true,
           progress: undefined,
         });
+        try {
+          await ethereum.request({
+            method: 'wallet_switchEthereumChain',
+            params: [{ chainId: '0x' + CHAIN_ID }],
+          });
+        } catch(err) {
+          window.ethereum.request({
+            method: "wallet_addEthereumChain",
+            params: [
+              CHAIN_INFO,
+            ],
+          });
+        }
       }
       return;
     }
