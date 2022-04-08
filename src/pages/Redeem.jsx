@@ -45,18 +45,14 @@ export default function Redeem() {
   const [offset, setOffset] = React.useState(0);
 
   const totalNFTS = async () => {
-    console.log("totalNFTS");
-    console.log("contracts", contracts);
     const addr = await signer?.getAddress();
     var nfts = [];
     var nftsToClaim = [];
-    console.log(contractIndex, contracts.length);
     for (
       var contractIndex = 0;
       contractIndex < contracts.length;
       contractIndex++
     ) {
-      console.log("je suis sur aue je suis dans le for");
       var contract = contracts[contractIndex];
       var _nfts = await contract?.getTokenIdFromOwner(addr);
       var count = await contract?.balanceOf(addr);
@@ -77,10 +73,7 @@ export default function Redeem() {
         nftsToClaim.push({ id: unclaimed[j], contract: contract });
       }
       setNFTS(nfts);
-      console.log(nfts);
-      console.log("nfts", nfts);
       setNFTSToClaim(nftsToClaim);
-      console.log("nftsToClaim", nftsToClaim);
     }
   };
 
@@ -152,7 +145,6 @@ export default function Redeem() {
   }
 
   React.useEffect(() => {
-    console.log("collections", collections);
     initWallet();
   }, [collections]);
 
