@@ -27,11 +27,11 @@ const CHAIN_INFO = {
     decimals: 18,
   },
   blockExplorerUrls: ["https://rinkeby.etherscan.io"],
-}
+};
 
 const sleep = (milliseconds) => {
-  return new Promise(resolve => setTimeout(resolve, milliseconds))
-}
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+};
 
 export default function Redeem() {
   const [nfts, setNFTS] = React.useState([]);
@@ -51,7 +51,11 @@ export default function Redeem() {
     var nfts = [];
     var nftsToClaim = [];
     console.log(contractIndex, contracts.length);
-    for (var contractIndex = 0; contractIndex < contracts.length; contractIndex++) {
+    for (
+      var contractIndex = 0;
+      contractIndex < contracts.length;
+      contractIndex++
+    ) {
       console.log("je suis sur aue je suis dans le for");
       var contract = contracts[contractIndex];
       var _nfts = await contract?.getTokenIdFromOwner(addr);
@@ -173,15 +177,13 @@ export default function Redeem() {
         });
         try {
           await ethereum.request({
-            method: 'wallet_switchEthereumChain',
-            params: [{ chainId: '0x' + CHAIN_ID }],
+            method: "wallet_switchEthereumChain",
+            params: [{ chainId: "0x" + CHAIN_ID }],
           });
-        } catch(err) {
+        } catch (err) {
           window.ethereum.request({
             method: "wallet_addEthereumChain",
-            params: [
-              CHAIN_INFO,
-            ],
+            params: [CHAIN_INFO],
           });
         }
       }
