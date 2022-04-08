@@ -9,12 +9,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 import "../scss/Redeem.scss";
 
-const contractAddress = [
-  {
-    address: "0x70C398faA01C62725b23B02a85f0803D32161892",
-    abi: "https://amanu.io/abi/AMANU.json",
-  },
-];
 const CHAIN_ID = 4;
 const CHAIN_NAME = "Rinkeby";
 const CHAIN_INFO = {
