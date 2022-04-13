@@ -2,7 +2,13 @@ section.collection {
     height: 100vh;
     width: 100vw;
     padding: 5vh;
-    padding-top: calc(5vh + 135px);
+    display: flex;
+    justify-content: space-between;
+
+
+    >div:first-of-type {
+        padding-top: calc(5vh + 115px);
+    }
 
     .info {
         z-index: 100;
@@ -66,6 +72,7 @@ section.collection {
                 padding: .2rem 0;
                 font-family: "Poppins", sans-serif;
             }
+
             .address {
                 display: flex;
                 border-radius: .6rem;
@@ -100,7 +107,27 @@ section.collection {
         }
     }
 
+    button.mint {
+        border: none;
+        background: linear-gradient(45deg, #ECD92D 0%, #D8A41E 100%);
+        padding: 1.2rem;
+        border-radius: 1.3rem;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+        transition: box-shadow .4s ease-in-out;
+        color: #fff;
+        font-size: 1.2rem;
+        width: 330px;
+
+        &:hover {
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+        }
+    }
+
     .elements {
         display: flex;
+        flex-wrap: wrap;
+        width: calc(90% - 330px);
+        gap: 1rem;
     }
 }

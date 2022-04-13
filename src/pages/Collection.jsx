@@ -1,42 +1,63 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import "../scss/Collection.scss"
+import "../scss/Collection.scss";
 import { ethers } from "ethers";
 import ABI from "../assets/NFTAbi.json";
 import PhysicalNFT from "../components/PhysicalNFT";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import CollectionItem from "../components/CollectionItem";
 
-const provider = new ethers.providers.JsonRpcProvider("https://rinkeby.infura.io/v3/f8ccbba88cde4fbf8cfa8c82dc353e08");
+const CHAIN_ID = 4;
+const CHAIN_NAME = "Rinkeby";
+const CHAIN_INFO = {
+  chainId: "0x4",
+  rpcUrls: ["https://rinkeby.infura.io/v3/"],
+  chainName: "Rinkeby Test Network",
+  nativeCurrency: {
+    name: "ETH",
+    symbol: "ETH",
+    decimals: 18,
+  },
+  blockExplorerUrls: ["https://rinkeby.etherscan.io"],
+};
+
+const provider = new ethers.providers.Web3Provider(window.ethereum);
 
 export default function Collection() {
   const [collection, setCollection] = React.useState(null);
   const [valid, setValid] = React.useState(true);
   const [contract, setContract] = React.useState(null);
   const [loaded, setLoaded] = React.useState(false);
+  const [elements, setElements] = React.useState([]);
   let { slug } = useParams();
 
   async function getCollection() {
-    // fetch("https://amanu.io:3000/collections/slug/" + slug).then(
-    //   async (response) => {
-    //     try {
-    //       let json = await response.json();
-    //       setCollection(json);
-    //       setValid(true);
-    //     } catch (e) {
-    //       setValid(false);
-    //     }
-    //   }
-    // );
-    setCollection({
-      id: 1,
-      name: "Art Collection",
-      creator: "Gianluca Minoprio",
-      address: "0x70C398faA01C62725b23B02a85f0803D32161892",
-      abi: "/abi/1.json",
-      slug: "art-collection",
-      creationDate: "2020-04-01T00:00:00.000Z",
-      image: "https://images.fineartamerica.com/images-medium-large-5/fresh-paint-2-jane-davies.jpg",
-      banner: "https://images.unsplash.com/photo-1624115406015-16eb7e7bc2a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-    })
+    fetch("https://amanu.io:3000/collections/slug/" + slug).then(
+      async (response) => {
+        try {
+          let json = await response.json();
+          setCollection(json);
+          setValid(true);
+        } catch (e) {
+          setValid(false);
+        }
+      }
+    );
+    // setCollection({
+    //   id: 1,
+    //   name: "Art Collection",
+    //   creator: "Gianluca Minoprio",
+    //   address: "0x70C398faA01C62725b23B02a85f0803D32161892",
+    //   abi: "/abi/1.json",
+    //   slug: "art-collection",
+    //   creationDate: "2020-04-01T00:00:00.000Z",
+    //   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus, lectus in ultricies euismod, metus justo rutrum sem, vel sodales libero orci eu justo. Pellentesque nec ex justo. Ut semper commodo sem, ac viverra sem feugiat non. Quisque euismod lacinia neque a pharetra. Vestibulum pulvinar nulla porttitor efficitur tincidunt. Sed dapibus aliquam feugiat. Nulla posuere nec enim et auctor. Praesent sed mollis justo. Etiam ut diam lectus. Sed euismod, dui eget porta pulvinar, risus enim interdum magna, quis maximus urna tellus id dui. Cras urna justo, dictum nec congue eget, lobortis a tellus.",
+    //   image:
+    //     "https://images.fineartamerica.com/images-medium-large-5/fresh-paint-2-jane-davies.jpg",
+    //   banner:
+    //     "https://images.unsplash.com/photo-1624115406015-16eb7e7bc2a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    // });
   }
 
   async function loadContract() {
@@ -70,6 +91,83 @@ export default function Collection() {
     document.title = collection.name + " by " + collection.creator + " | Amanu";
   }
 
+  const mintCollection = async () => {
+    window.ethereum.request({ method: "eth_requestAccounts" });
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = await provider.getSigner();
+    var addr = await collection.address;
+    const contract = new ethers.Contract(addr, ABI.abi, signer);
+    try {
+      const tx = await contract.payToMint(1, {
+        value: ethers.utils.parseEther("0.005"),
+      });
+      await tx.wait();
+      toast.success("Collection minted successfully!");
+      setElements([...elements, elements.length]);
+    } catch (e) {
+      toast.error("Error minting collection!");
+    }
+  };
+
+  const getMintedElements = async () => {
+    const count = await contract.count();
+    const elements = [];
+    for (let indexElements = 0; indexElements < count; indexElements++) {
+      elements.push(indexElements);
+    }
+    setElements(elements);
+  };
+
+  React.useEffect(() => {
+    if (contract) {
+      getMintedElements();
+    }
+  }, [contract]);
+
+  const [verif, setVerif] = React.useState(false);
+
+  async function verifChainId() {
+    const chaindId = await (await provider.getNetwork()).chainId;
+
+    if (chaindId != CHAIN_ID) {
+      toast("⚠️ Wrong network (use " + CHAIN_NAME + ")", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      try {
+        await ethereum.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: "0x" + CHAIN_ID }],
+        });
+      } catch (err) {
+        window.ethereum.request({
+          method: "wallet_addEthereumChain",
+          params: [CHAIN_INFO],
+        });
+      }
+    }
+  }
+
+  React.useEffect(() => {
+    if (!verif) {
+      verifChainId();
+      if (window.ethereum) {
+        window.ethereum.on("chainChanged", async () => {
+          window.location.reload();
+        });
+        window.ethereum.on("accountsChanged", async () => {
+          window.location.reload();
+        });
+      }
+    }
+    setVerif(true);
+  }, [verif]);
+
   return (
     <section className="collection">
       <div>
@@ -88,13 +186,31 @@ export default function Collection() {
             </div>
           </a>
           <p className="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus, lectus in ultricies euismod, metus justo rutrum sem, vel sodales libero orci eu justo. Pellentesque nec ex justo. Ut semper commodo sem, ac viverra sem feugiat non. Quisque euismod lacinia neque a pharetra. Vestibulum pulvinar nulla porttitor efficitur tincidunt. Sed dapibus aliquam feugiat. Nulla posuere nec enim et auctor. Praesent sed mollis justo. Etiam ut diam lectus. Sed euismod, dui eget porta pulvinar, risus enim interdum magna, quis maximus urna tellus id dui. Cras urna justo, dictum nec congue eget, lobortis a tellus.
+            {collection?.desc}
           </p>
         </div>
+        <button className="mint" onClick={mintCollection}>
+          Mint an item !
+        </button>
       </div>
       <div className="elements">
-        {/* {collection && contract ? <PhysicalNFT contract={contract} tokenID={1} address={collection?.address}></PhysicalNFT> : null} */}
+        {elements.map((element, index) => {
+          return (
+            <CollectionItem key={index} itemID={element} contract={contract} />
+          );
+        })}
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </section>
   );
 }
