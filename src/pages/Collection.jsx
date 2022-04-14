@@ -39,15 +39,14 @@ export default function Collection() {
     //       try {
     //         let json = await response.json();
     //         setCollection(json);
-    //         setExists(true);
     //       } catch (e) {
-    //         setExists(false);
+    //         setCollection(null);
     //       }
     //     }
     //   )
     // }
     // catch (e) {
-    //   setExists(false);
+    //   setCollection(null);
     // }
     setCollection({
       id: 1,
@@ -63,7 +62,7 @@ export default function Collection() {
       banner:
         "https://images.unsplash.com/photo-1624115406015-16eb7e7bc2a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     });
-    setExists(true);
+    //setExists(true);
   }
 
   async function loadContract() {
@@ -72,17 +71,13 @@ export default function Collection() {
   }
 
   React.useEffect(() => {
-    console.log("75");
     if (collection) {
       loadContract();
+      document.title = collection.name + " by " + collection.creator + " | Amanu";
     } else {
       getCollection();
     }
   }, [collection]);
-
-  if (!exists) {
-    return <div>This page doesn't exists</div>;
-  }
 
   function trimAddress(addr) {
     let size = addr?.length;
@@ -91,13 +86,6 @@ export default function Collection() {
     }
     return addr;
   }
-
-  React.useEffect(() => {
-    console.log("95");
-    if (collection) {
-      document.title = collection.name + " by " + collection.creator + " | Amanu";
-    }
-  }, [collection])
 
   const mintCollection = async () => {
     window.ethereum.request({ method: "eth_requestAccounts" });
@@ -127,7 +115,6 @@ export default function Collection() {
   };
 
   React.useEffect(() => {
-    console.log("130");
     if (contract) {
       getMintedElements();
     }
@@ -163,7 +150,6 @@ export default function Collection() {
   }
 
   React.useEffect(() => {
-    console.log("166");
     if (!verif) {
       verifChainId();
       if (window.ethereum) {
@@ -176,7 +162,11 @@ export default function Collection() {
       }
       setVerif(true);
     }
-  }, []);
+  }, [verif]);
+
+  if (collection == null) {
+    return <div>Collection not found</div>;
+  }
 
   return (
     <section className="collection">
