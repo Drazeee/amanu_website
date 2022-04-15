@@ -23,14 +23,18 @@ export default function CollectionItem({ itemID, contract }) {
     <div className="collection_item">
       <p>{itemID}</p>
       <div className="img">
-        {loaded ? <img src={uri} /> : <LoadingIcons.Puff
-          stroke="#49D3D5"
-          speed={0.75}
-          style={{
-            position: "relative",
-            fontSize: "4em",
-          }}
-        />}
+        {loaded ? (
+          <img src={uri} />
+        ) : (
+          <LoadingIcons.Puff
+            stroke="#49D3D5"
+            speed={0.75}
+            style={{
+              position: "relative",
+              fontSize: "4em",
+            }}
+          />
+        )}
       </div>
     </div>
   );

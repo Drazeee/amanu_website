@@ -169,7 +169,13 @@ export default function Collection() {
     <section className="collection">
       <div>
         <div className="info">
-          <a className="top" href={CHAIN_INFO.blockExplorerUrls[0] + '/address/' + collection.address} target="_blank">
+          <a
+            className="top"
+            href={
+              CHAIN_INFO.blockExplorerUrls[0] + "/address/" + collection.address
+            }
+            target="_blank"
+          >
             <div className="image">
               <img src={collection?.image} alt="" />
             </div>
