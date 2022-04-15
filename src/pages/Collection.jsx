@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import "../scss/Collection.scss";
 import { ethers } from "ethers";
 import ABI from "../assets/NFTAbi.json";
-import PhysicalNFT from "../components/PhysicalNFT";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CollectionItem from "../components/CollectionItem";
@@ -177,18 +176,18 @@ export default function Collection() {
             target="_blank"
           >
             <div className="image">
-              <img src={collection?.image} alt="" />
+              <img src={collection.image} alt="" />
             </div>
             <div className="owner">
-              <h1>{collection?.name}</h1>
-              <h2>by {collection?.creator}</h2>
+              <h1>{collection.name}</h1>
+              <h2>by {collection.creator}</h2>
               <div className="address">
-                <h5>#{collection?.id}</h5>
-                <h5>{trimAddress(collection?.address)}</h5>
+                <h5>#{collection.id}</h5>
+                <h5>{trimAddress(collection.address)}</h5>
               </div>
             </div>
           </a>
-          <p className="content">{collection?.desc}</p>
+          <p className="content">{collection.desc}</p>
         </div>
         <button className="mint" onClick={mintCollection}>
           Mint an item !
