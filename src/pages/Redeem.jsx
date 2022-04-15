@@ -125,7 +125,13 @@ export default function Redeem() {
       setContracts(contracts);
       await sleep(1000);
       setChainId(await (await provider.getNetwork()).chainId);
-      setAddress(await signer.getAddress());
+      var curAddr = await signer.getAddress();
+      var name = await provider.lookupAddress(curAddr);
+      if (name) {
+        setAddress(name);
+      } else {
+        setAddress(trimAddress(curAddr));
+      }
     } catch (e) {
       toast("⚠️ Error while loading your wallet", {
         position: "top-right",
@@ -191,7 +197,7 @@ export default function Redeem() {
       <Header back={true} />
       <div className="safearea redeem">
         <h1>
-          Hey, <small>{trimAddress(address)}</small>{" "}
+          Hey, <small>{address}</small>{" "}
           <Emoji name="waving-hand" />
         </h1>
         <h3>
