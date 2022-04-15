@@ -26,43 +26,39 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
 
 export default function Collection() {
   const [collection, setCollection] = React.useState(null);
-  const [exists, setExists] = React.useState(false);
   const [contract, setContract] = React.useState(null);
-  const [loaded, setLoaded] = React.useState(false);
   const [elements, setElements] = React.useState([]);
   let { slug } = useParams();
 
   async function getCollection() {
-    // try {
-    //   fetch("https://amanu.io:3000/collections/slug/" + slug).then(
-    //     async (response) => {
-    //       try {
-    //         let json = await response.json();
-    //         setCollection(json);
-    //       } catch (e) {
-    //         setCollection(null);
-    //       }
-    //     }
-    //   )
-    // }
-    // catch (e) {
-    //   setCollection(null);
-    // }
-    setCollection({
-      id: 1,
-      name: "Art Collection",
-      creator: "Gianluca Minoprio",
-      address: "0x70C398faA01C62725b23B02a85f0803D32161892",
-      abi: "/abi/1.json",
-      slug: "art-collection",
-      creationDate: "2020-04-01T00:00:00.000Z",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus, lectus in ultricies euismod, metus justo rutrum sem, vel sodales libero orci eu justo. Pellentesque nec ex justo. Ut semper commodo sem, ac viverra sem feugiat non. Quisque euismod lacinia neque a pharetra. Vestibulum pulvinar nulla porttitor efficitur tincidunt. Sed dapibus aliquam feugiat. Nulla posuere nec enim et auctor. Praesent sed mollis justo. Etiam ut diam lectus. Sed euismod, dui eget porta pulvinar, risus enim interdum magna, quis maximus urna tellus id dui. Cras urna justo, dictum nec congue eget, lobortis a tellus.",
-      image:
-        "https://images.fineartamerica.com/images-medium-large-5/fresh-paint-2-jane-davies.jpg",
-      banner:
-        "https://images.unsplash.com/photo-1624115406015-16eb7e7bc2a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-    });
-    //setExists(true);
+    try {
+      fetch("https://amanu.io:3000/collections/slug/" + slug).then(
+        async (response) => {
+          try {
+            let json = await response.json();
+            setCollection(json);
+          } catch (e) {
+            setCollection(null);
+          }
+        }
+      );
+    } catch (e) {
+      setCollection(null);
+    }
+    // setCollection({
+    //   id: 1,
+    //   name: "Art Collection",
+    //   creator: "Gianluca Minoprio",
+    //   address: "0x70C398faA01C62725b23B02a85f0803D32161892",
+    //   abi: "/abi/1.json",
+    //   slug: "art-collection",
+    //   creationDate: "2020-04-01T00:00:00.000Z",
+    //   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus, lectus in ultricies euismod, metus justo rutrum sem, vel sodales libero orci eu justo. Pellentesque nec ex justo. Ut semper commodo sem, ac viverra sem feugiat non. Quisque euismod lacinia neque a pharetra. Vestibulum pulvinar nulla porttitor efficitur tincidunt. Sed dapibus aliquam feugiat. Nulla posuere nec enim et auctor. Praesent sed mollis justo. Etiam ut diam lectus. Sed euismod, dui eget porta pulvinar, risus enim interdum magna, quis maximus urna tellus id dui. Cras urna justo, dictum nec congue eget, lobortis a tellus.",
+    //   image:
+    //     "https://images.fineartamerica.com/images-medium-large-5/fresh-paint-2-jane-davies.jpg",
+    //   banner:
+    //     "https://images.unsplash.com/photo-1624115406015-16eb7e7bc2a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    // });
   }
 
   async function loadContract() {
@@ -73,7 +69,8 @@ export default function Collection() {
   React.useEffect(() => {
     if (collection) {
       loadContract();
-      document.title = collection.name + " by " + collection.creator + " | Amanu";
+      document.title =
+        collection.name + " by " + collection.creator + " | Amanu";
     } else {
       getCollection();
     }
@@ -172,7 +169,7 @@ export default function Collection() {
     <section className="collection">
       <div>
         <div className="info">
-          <a className="top" href="">
+          <a className="top" href={CHAIN_INFO.blockExplorerUrls[0] + '/address/' + collection.address} target="_blank">
             <div className="image">
               <img src={collection?.image} alt="" />
             </div>
@@ -185,9 +182,7 @@ export default function Collection() {
               </div>
             </div>
           </a>
-          <p className="content">
-            {collection?.desc}
-          </p>
+          <p className="content">{collection?.desc}</p>
         </div>
         <button className="mint" onClick={mintCollection}>
           Mint an item !

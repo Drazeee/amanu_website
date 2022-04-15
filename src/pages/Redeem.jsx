@@ -114,10 +114,11 @@ export default function Redeem() {
       ) {
         var addr = await collections[contractIndex]?.address;
         fetch(
-          "https://amanu.io:3000/abi/" + collections[contractIndex]?.id
+          "https://amanu.io:3000/abi/" + collections[contractIndex]?.id + "?addr=" + addr
         ).then(async (response) => {
+          console.log(response.url.split("?")[1].split("=")[1]);
           var res = await response.json();
-          const contract = new ethers.Contract(addr, res.abi, signer);
+          const contract = new ethers.Contract(response.url.split("?")[1].split("=")[1], res.abi, signer);
           contracts.push(contract);
         });
       }
