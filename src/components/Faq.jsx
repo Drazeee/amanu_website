@@ -14,10 +14,9 @@ export default function Faq() {
           <Emoji name="raised-hand" />
         </h2>
         <p>
-          Everything you need to know about. 
+          Everything you need to know about.
           <br />
-          Can't find the answer
-          you're looking for? Please contact us.
+          Can't find the answer you're looking for? Please contact us.
         </p>
       </div>
       <div className="items">

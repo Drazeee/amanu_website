@@ -19,10 +19,7 @@ export default function Team() {
     <div className="safearea team">
       <div className="images">
         <div className="fith">
-          <a
-            href="https://www.epita.fr/"
-            target="_blank"
-          >
+          <a href="https://www.epita.fr/" target="_blank">
             <LazyLoadImage src={epita} alt="" />
           </a>
         </div>
@@ -59,11 +56,15 @@ export default function Team() {
       <div className="content">
         <h4>Team</h4>
         <h2>
-          Three computer <b>engineers</b> <Emoji name="factory-worker" /> to open up{" "}
-          <Emoji name="rocket" /> <b>new opportunities</b> for you
+          Three computer <b>engineers</b> <Emoji name="factory-worker" /> to
+          open up <Emoji name="rocket" /> <b>new opportunities</b> for you
         </h2>
         <p>
-          We are a Multicultural Team of 3 friends 3 nationalities and studying in one of the best known Computer Science Engineer College in France called EPITA. Having the same ambitions and already working in other project together, we decided to make the step in the field of art that we considered important to develop with quality in the Metaverse.
+          We are a Multicultural Team of 3 friends 3 nationalities and studying
+          in one of the best known Computer Science Engineer College in France
+          called EPITA. Having the same ambitions and already working in other
+          project together, we decided to make the step in the field of art that
+          we considered important to develop with quality in the Metaverse.
         </p>
         <div className="cta">
           <a href="https://twitter.com/amanu_nft" target="_blank">

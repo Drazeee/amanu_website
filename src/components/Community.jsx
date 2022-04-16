@@ -18,10 +18,15 @@ export default function Community() {
       <div className="fullsize">
         <div>
           <p>
-            People are already{" "}
-            <b>owning</b> houses, making concerts & meetings in the Metaverse. {" "}
-            All this content is in majority created by people who are not artist but by the rare one who knows Web3. {" "}
-            <b> We want to bring the artist of our world to the metaverse in the simplier way possible</b>.
+            People are already <b>owning</b> houses, making concerts & meetings
+            in the Metaverse. All this content is in majority created by people
+            who are not artist but by the rare one who knows Web3.{" "}
+            <b>
+              {" "}
+              We want to bring the artist of our world to the metaverse in the
+              simplier way possible
+            </b>
+            .
           </p>
           <p>
             Together, we will bring your art to this new world! Owning a gallery
@@ -30,7 +35,7 @@ export default function Community() {
             Everyone can observe and enjoy you work.
           </p>
           <p>
-            Go check {" "}
+            Go check{" "}
             <a href="https://spatial.io/" target="_blank">
               @Spatial
             </a>{" "}
@@ -43,7 +48,7 @@ export default function Community() {
       <div className="key_numbers">
         <h6>KEY NUMBERS</h6>
         <h3>
-          Take the lead, 
+          Take the lead,
           <br /> be pioneers in a world under
           <br /> construction that needs you
         </h3>
@@ -90,9 +95,9 @@ export default function Community() {
           </div>
         </div>
         <p>
-          Artists are the creators we expect to build the metaverses. NFTs are built for
-          you in order to show your work in all over the world, increase your
-          community, and avoid fraud in the secondary market.
+          Artists are the creators we expect to build the metaverses. NFTs are
+          built for you in order to show your work in all over the world,
+          increase your community, and avoid fraud in the secondary market.
         </p>
       </div>
     </div>
