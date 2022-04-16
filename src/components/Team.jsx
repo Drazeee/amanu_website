@@ -66,7 +66,7 @@ export default function Team() {
           We are a Multicultural Team of 3 friends 3 nationalities and studying in one of the best known Computer Science Engineer College in France called EPITA. Having the same ambitions and already working in other project together, we decided to make the step in the field of art that we considered important to develop with quality in the Metaverse.
         </p>
         <div className="cta">
-          <a href="https://twitter.com/Amanu_nft" target="_blank">
+          <a href="https://twitter.com/amanu_nft" target="_blank">
             <button>
               <div className="link">
                 <svg
