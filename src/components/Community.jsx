@@ -18,22 +18,23 @@ export default function Community() {
       <div className="fullsize">
         <div>
           <p>
-            The Metaverses are new virtual worlds. People are already{" "}
-            <b>owning</b> houses, making concerts, meetings, ... There is a{" "}
-            <b>lack of artists and artwork</b>.
+            People are already{" "}
+            <b>owning</b> houses, making concerts & meetings in the Metaverse. {" "}
+            All this content is in majority created by people who are not artist but by the rare one who knows Web3. {" "}
+            <b> We want to bring the artist of our world to the metaverse in the simplier way possible</b>.
           </p>
           <p>
             Together, we will bring your art to this new world! Owning a gallery
             in the <b>Metaverses</b> is a way for you to shine and{" "}
             <b>meet a new community</b>. Your location is no longer a limit.
-            Everyone can observe and savor you work.
+            Everyone can observe and enjoy you work.
           </p>
           <p>
-            Let's take a look at the{" "}
+            Go check {" "}
             <a href="https://spatial.io/" target="_blank">
               @Spatial
             </a>{" "}
-            work, they are actors of this new world!
+            to see what already exist in the Metaverse!
           </p>
         </div>
         <LazyLoadImage src={com_img} alt="" className="noselect" />
@@ -42,9 +43,9 @@ export default function Community() {
       <div className="key_numbers">
         <h6>KEY NUMBERS</h6>
         <h3>
-          Take the lead, be
-          <br /> pioneers in a world under
-          <br /> construction which awaits you
+          Take the lead, 
+          <br /> be pioneers in a world under
+          <br /> construction that needs you
         </h3>
         <div className="numbers">
           <div className="number">
@@ -89,7 +90,7 @@ export default function Community() {
           </div>
         </div>
         <p>
-          Artists are the people we expect in the metaverses. NFTs are built for
+          Artists are the creators we expect to build the metaverses. NFTs are built for
           you in order to show your work in all over the world, increase your
           community, and avoid fraud in the secondary market.
         </p>

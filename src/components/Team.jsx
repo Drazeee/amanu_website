@@ -52,14 +52,11 @@ export default function Team() {
       <div className="content">
         <h4>Team</h4>
         <h2>
-          Three computer <b>engineers</b> <Emoji name="laptop" /> to open up{" "}
+          Three computer <b>engineers</b> <Emoji name="factory-worker" /> to open up{" "}
           <Emoji name="rocket" /> <b>new opportunities</b> for you
         </h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget
-          mauris sodales, sodales neque non, scelerisque dolor. In tincidunt
-          dolor sit amet nibh ullamcorper laoreet. Mauris faucibus, nisl in
-          feugiat pulvinar.
+          We are a Multicultural Team of 3 friends 3 nationalities and studying in one of the best known Computer Science Engineer College in France called EPITA. Having the same ambitions and already working in other project together, we decided to make the step in the field of art that we considered important to develop with quality in the Metaverse.
         </p>
         <div className="cta">
           <a href="https://twitter.com/Amanu_nft" target="_blank">

@@ -26,11 +26,11 @@ export default function Hero() {
             <br />
             <strong>Your Art</strong> With
             <br />
-            The <strong>Metaverses</strong>.
+            The <strong>Metaverses</strong>
           </h1>
           <p>
-            Sell your physical art via NFT, take advantage of blockchain
-            traceability & royalties in the secondary market.
+            Sell your physical art via NFT, translate it into the Metaverse, take advantage of blockchain
+            traceability <br />& royalties in the secondary market.
           </p>
           <div className="cta">
             <a href="https://twitter.com/Amanu_nft" target="_blank">

@@ -114,17 +114,13 @@ export default function About() {
         <div className="content">
           <h4>About Us</h4>
           <h2>
-            Artists <Emoji name="waving-hand" />. Keep an <strong>eye</strong>{" "}
-            on your <br />
-            <strong>art</strong>, we use the <strong>blockchain!</strong>
+            Hey! Artists <Emoji name="waving-hand" /> <br /> Want to bring your <strong> artwork </strong> to another <strong> level</strong>?
           </h2>
           <p>
-            We believe in blockchain. It's a technology that will revolutionize
-            the way you work. By using our service, you will discover a new way
-            to sell, and a unique new way to resell!
+              Our company help you to transform your Artwork into the NFT project that is the best suited for you and the future Metaverses that are coming. 
             <br />
             <br />
-            Imagine a unique certificate, link to your artwork, powerful enough
+            With NFT's imagine a unique digital certificate, linked to your artwork, powerful enough
             to prove to the world, from anywhere and anytime, the authenticity
             of your work.
           </p>
@@ -133,20 +129,20 @@ export default function About() {
       <section>
         <div className="content">
           <h2>
-            <strong>Anchor</strong> your works, make them exists{" "}
-            <strong>everywhere</strong>{" "}
+            <strong>Anchor</strong> your art, make it exist in the{" "}
+            <strong> Metaverse</strong>{" "}
             <Emoji name="globe-showing-europe-africa" />, earn{" "}
             <strong>royalties</strong>{" "}
           </h2>
           <p>
-            With our service, your works are secure by everyone in the
-            blockchain. For simple, everyone can view the owner of the
-            certificate linked to your art! This process is 100% decentralized.
+            With the expansion of Metaverses, everyone need Artwork to decorate their virtual environement.
+            People need you, and want your art digitaly. Let us simplify the task by digitalising all your existing work into NFT.
+            So no need to focus on the techy part we handle everything, you just focus on what is really important ... Art.  
             <br />
             <br />
-            We provide you the ability to earn royalties from each resell in the
+            We also provide you the ability to earn royalties from each resell in the
             secondary market. In other term, each time an owner of your work
-            sell it, you earn percentage of the total amount.
+            sell it, you earn percentage of the total... Is not that crazy?
           </p>
         </div>
         <LazyLoadImage src="" alt="" />
@@ -160,12 +156,11 @@ export default function About() {
             method for your <strong>community</strong>
           </h2>
           <p>
-            The <b>certificate</b> allows your buyers to come and{" "}
+            The <b>NFT</b> will be linked to your physical art. It will allow your clients to come and{" "}
             <b>request the delivery</b> of your work through our{" "}
-            <b>tailor-made platform</b>. All costs related to the delivery are{" "}
-            <b>paid</b> with the certificate. The frame changes{" "}
-            <b>from green to yellow</b>: the certificate no longer allows you to
-            order the work associated with it.
+            <b>tailor-made platform</b>. The frame of the NFT will change{" "}
+            <b>from green to yellow</b>: the NFT will no longer allow you to
+            order the art linked with.
           </p>
         </div>
         <div className="sticky" style={{ height: "95vh" }}></div>
