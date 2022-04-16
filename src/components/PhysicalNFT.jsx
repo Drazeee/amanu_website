@@ -41,6 +41,7 @@ export default function PhysicalNFT({
     fetch(uri)
       .then((response) => response.json())
       .then((data) => {
+        console.log("data", data);
         setUri(data.image.replace("ipfs://", "https://ipfs.io/ipfs/"));
       });
   }

@@ -119,7 +119,6 @@ export default function Redeem() {
             "?addr=" +
             addr
         ).then(async (response) => {
-          console.log(response.url.split("?")[1].split("=")[1]);
           var res = await response.json();
           const contract = new ethers.Contract(
             response.url.split("?")[1].split("=")[1],

@@ -7,19 +7,24 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import arrow_up from "../assets/arrows/arrow_up.svg";
 import arrow_right from "../assets/arrows/arrow_right.svg";
-import us from "../assets/team/us.png";
+import us from "../assets/team/us_1.png";
 import qfisch from "../assets/team/qfisch.png";
-import qfisch_meta from "../assets/team/qfisch_meta.png";
+import epita from "../assets/team/epita.png";
 import gminoprio from "../assets/team/gminoprio.png";
 import csimonmeunier from "../assets/team/csimonmeunier.png";
-import csimonmeunier_meta from "../assets/team/csimonmeunier_meta.jpg";
+import amanu from "../assets/team/amanu.png";
 
 export default function Team() {
   return (
     <div className="safearea team">
       <div className="images">
         <div className="fith">
-          <LazyLoadImage src={csimonmeunier_meta} alt="" />
+          <a
+            href="https://www.epita.fr/"
+            target="_blank"
+          >
+            <LazyLoadImage src={epita} alt="" />
+          </a>
         </div>
         <div className="fourth">
           <a
@@ -43,7 +48,9 @@ export default function Team() {
           </a>
         </div>
         <div className="first">
-          <LazyLoadImage src={qfisch_meta} alt="" />
+          <a href="https://www.linkedin.com/company/amanu-nft/" target="_blank">
+            <LazyLoadImage src={amanu} alt="" />
+          </a>
         </div>
         <div className="us">
           <LazyLoadImage src={us} alt="" />
