@@ -21,7 +21,11 @@ const CHAIN_INFO = {
   blockExplorerUrls: ["https://rinkeby.etherscan.io"],
 };
 
-const provider = new ethers.providers.Web3Provider(window.ethereum);
+var provider;
+
+if (window.ethereum) {
+  provider = new ethers.providers.Web3Provider(window.ethereum);
+}
 
 export default function Collection() {
   const [collection, setCollection] = React.useState(null);
