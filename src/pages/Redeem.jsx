@@ -69,7 +69,7 @@ export default function Redeem() {
       setNFTS(nfts);
       setNFTSToClaim(nftsToClaim);
     }
-  };
+  }; 
 
   function onRedeem() {
     setOffset(offset + 1);
